@@ -21,7 +21,8 @@ kolo.cpp\
 kwadrat.cpp\
 trojkat.cpp \
     odcinek.cpp \
-    dialog.cpp
+    dialog.cpp \
+    dialog2.cpp
 
 HEADERS  += mainwindow.h \
 myglwidget.h\
@@ -30,7 +31,9 @@ kolo.h\
 kwadrat.h\
 trojkat.h \
     odcinek.h \
-    dialog.h
+    dialog.h \
+    dialog2.h
 
 FORMS    += mainwindow.ui \
-    dialog.ui
+    dialog.ui \
+    dialog2.ui

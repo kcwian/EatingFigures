@@ -100,7 +100,7 @@ void MainWindow::newMessage()
             QDataStream data(clients.at(i));
             data >> key;
             if(key == Qt::Key_Up || key == Qt::Key_Down || key == Qt::Key_Left || key == Qt::Key_Right )
-            ruchOdrzutowy(key,i);
+                ruchOdrzutowy(key,i);
 
         }
 
@@ -253,14 +253,14 @@ void MainWindow::zjadanieMniejszych()
         {
             graczAktywny = tmp;
         }
-//        if(graczAktywny !=-1 && listaFigur.at(graczAktywny)->zwrocPole() > sumaPol-listaFigur.at(graczAktywny)->zwrocPole())
-//        {
-//            koniecPoziomu();
-//        }
-//        else if(graczAktywny == -1)
-//        {
-//            zmienPoziom(aktualnyPoziom);
-//        }
+        if(graczAktywny !=-1 && listaFigur.at(graczAktywny)->zwrocPole() > sumaPol-listaFigur.at(graczAktywny)->zwrocPole())
+        {
+            koniecPoziomu(graczAktywny);
+        }
+        else if(graczAktywny == -1)
+        {
+            zmienPoziom(aktualnyPoziom);
+        }
 
         // zrobić warunek konca poziomu - zjeść przeciwnika, czy wszystkich ?
 
@@ -311,6 +311,7 @@ void MainWindow::zmienPoziom(int i)
 
         }
     }
+    potwierdzenieZmianyPoziomu = 0;
     timer.start(Ts);
 
 }
@@ -340,7 +341,7 @@ void MainWindow::ruchOdrzutowy(int key, int i)
     float sVx = sterowana->zwrocPredkoscX();
     float sVy = sterowana->zwrocPredkoscY();
     Figura *nowa = 0;
-    float dN = sterowana->zwrocRozmiar()*0.5 + 1; // w tej odleglosc pojawi się nowa ,+1 -
+    float dN = sterowana->zwrocodlegloscDoKolizji() + 1; // w tej odleglosc pojawi się nowa ,+1 -
 
     switch(sterowana->zwrocTyp())
     {
@@ -363,7 +364,7 @@ void MainWindow::ruchOdrzutowy(int key, int i)
     }
 
     listaFigur.append(nowa);
-    float dPole = sterowana->zwrocPole()*0.1; // 5% figury
+    float dPole = sterowana->zwrocPole()*0.05; // 5% figury
     sterowana->zmienPole(-dPole);
     nowa->zmienPole(-(nowa->zwrocPole() - dPole)); // domyślnie nowa ma rozmiar 1, a chce żeby miała pole dPole // można dopisać funkcje ustawPole
 
@@ -375,7 +376,7 @@ void MainWindow::ruchOdrzutowy(int key, int i)
         sterowana->ustawPredkoscY(sVy-2); // kolejnosc
         nowa->zmienPolozenie(0,dN);
         nowa->ustawPredkoscX(sVx);
-        nowa->ustawPredkoscY(sVy + 4); //sc kolejno // stala prędkość wzgl sterowanej
+        nowa->ustawPredkoscY(sVy + 6); //sc kolejno // stala prędkość wzgl sterowanej
         break;
 
     case Qt::Key_Down:
@@ -383,13 +384,13 @@ void MainWindow::ruchOdrzutowy(int key, int i)
         sterowana->ustawPredkoscY(sVy+2);
         nowa->zmienPolozenie(0,-dN);
         nowa->ustawPredkoscX(sVx);
-        nowa->ustawPredkoscY(sVy-4);
+        nowa->ustawPredkoscY(sVy-6);
 
         break;
     case Qt::Key_Right:
         sterowana->ustawPredkoscX(sVx-2);
         nowa->zmienPolozenie(dN,0);
-        nowa->ustawPredkoscX(sVx+4);
+        nowa->ustawPredkoscX(sVx+6);
         nowa->ustawPredkoscY(sVy);
 
 
@@ -397,7 +398,7 @@ void MainWindow::ruchOdrzutowy(int key, int i)
     case Qt::Key_Left:
         sterowana->ustawPredkoscX(sVx+2);
         nowa->zmienPolozenie(-dN,0);
-        nowa->ustawPredkoscX(sVx-4);
+        nowa->ustawPredkoscX(sVx-6);
         nowa->ustawPredkoscY(sVy);
 
     }
@@ -417,7 +418,30 @@ void MainWindow::on_pushButtonStop_clicked()
     timer.stop();
 }
 
-void MainWindow::koniecPoziomu()
+void MainWindow::koniecPoziomu(int graczAktywny)
 {
-    zmienPoziom(aktualnyPoziom+1);
+    enum {FIGURY,INFO,KONIEC_POZIOMU};
+    // timer.stop();
+    if(wyslanoKoniecPoziomu != 1) // w wiadomosci zwrotnej ustawić na 0
+    {
+            wyslanoKoniecPoziomu = 1;
+    for (int i=0; i<clients.size();i++)
+    {
+        QTcpSocket *tmp = clients.at(i);
+        if(tmp->isWritable())
+        {
+            QDataStream data(tmp);
+            data << KONIEC_POZIOMU;
+            if (i != graczAktywny)
+                data << false; // Przegrana
+            else
+                data << true; // Wygrana
+
+        }
+    }
+
+    }
+    // timer.start(Ts);
+//    if(potwierdzenieZmianyPoziomu == true)
+//        zmienPoziom(aktualnyPoziom+1);
 }

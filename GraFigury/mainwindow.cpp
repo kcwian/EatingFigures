@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     socket = new QTcpSocket(this);
     dialog = new Dialog(this);
+    dialog2 = new Dialog(this);
     connect(socket,SIGNAL(readyRead()),SLOT(newMessage()));
     connect(dialog,SIGNAL(connectToServer(QString,int)),this,SLOT(connectToServer(QString,int)));
     //    ui->tableWidget->insertRow(1);
@@ -43,7 +44,7 @@ void MainWindow::connectToServer(QString ip,int port)
 
 void MainWindow::newMessage()
 {
-    enum {FIGURY,INFO};
+    enum {FIGURY,INFO,KONIEC_POZIOMU};
 
     if (socket->isReadable())
     {
@@ -84,6 +85,18 @@ void MainWindow::newMessage()
             ui->widget->przeslijInfo(listaOdcinkow,ramkaPrzyblizania,nrKlienta);
             break;
         }
+        case KONIEC_POZIOMU:
+            bool wygrana;
+            data >> wygrana;
+            QTextStream out(stdout);
+            out << "działa" << endl;
+            if(wygrana)
+                if(!(dialog2->isVisible()))
+                dialog2->show();
+            else
+                    if(!(dialog2->isVisible()))
+                    dialog->show();
+            break;
 
         }
 

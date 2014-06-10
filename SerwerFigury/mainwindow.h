@@ -37,7 +37,7 @@ private slots:
 
 private:
     void zmienPoziom(int i);
-    void koniecPoziomu();
+    void koniecPoziomu(int);
     void ruchOdrzutowy(int, int);
     void ruchFigur();
     void zjadanieMniejszych();
@@ -59,6 +59,7 @@ private:
     QTimer timer;
     int Ts;
     int aktualnyPoziom;
+    bool potwierdzenieZmianyPoziomu, wyslanoKoniecPoziomu;
 
 
 

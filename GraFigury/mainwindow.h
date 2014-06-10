@@ -6,6 +6,7 @@
 #include <QTime>
 #include <QList>
 #include "dialog.h"
+#include "dialog2.h"
 #include "figura.h"
 #include "odcinek.h"
 
@@ -35,7 +36,7 @@ private:
     QList <Odcinek*> listaOdcinkow;
     Ui::MainWindow *ui;
     QTcpSocket *socket;
-    Dialog *dialog;
+    Dialog *dialog, *dialog2;
 
 
 };

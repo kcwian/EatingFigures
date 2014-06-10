@@ -15,7 +15,7 @@ void Poziomy::inicjalizuj(int i,int &ramkaPrzyblizania,QList <Figura*> &list, QL
     {
         for (int i = 0; i<liczbaKlientow; i++)
         {
-            Figura *ster = new Kolo(qrand()%100-50,qrand()%100-50,4);
+            Figura *ster = new Kolo(-30,25+i*5,4);
             ster->ustawPredkoscX(0);
             ster->ustawPredkoscY(0);
             ster->ustawOmega(0);
@@ -31,8 +31,8 @@ void Poziomy::inicjalizuj(int i,int &ramkaPrzyblizania,QList <Figura*> &list, QL
             {
 
                 nowa2 = new Kolo(i,j,3);
-                nowa2->ustawPredkoscX(1);
-                nowa2->ustawPredkoscY(1);
+                nowa2->ustawPredkoscX(3);
+                nowa2->ustawPredkoscY(3);
                 list.append(nowa2);
             }
 
