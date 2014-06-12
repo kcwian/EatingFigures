@@ -30,13 +30,16 @@ private slots:
     void newMessage();
     void on_pushButtonPolacz_clicked();
     void keyPressEvent(QKeyEvent *);
+    void zmienPoziomMessage();
 
 private:
     QList <Figura*> listaFigur; // pośredniczy w przesyłaniu
     QList <Odcinek*> listaOdcinkow;
     Ui::MainWindow *ui;
     QTcpSocket *socket;
-    Dialog *dialog, *dialog2;
+    Dialog *dialog;
+    Dialog2 *dialog2;
+    int wynik;
 
 
 };

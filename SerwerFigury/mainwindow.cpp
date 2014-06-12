@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     QNetworkConfigurationManager manager;
-
+    aktualnyPoziom = 0;
     if(manager.capabilities()&QNetworkConfigurationManager::NetworkSessionRequired) // zalezne od systemu
     {
         QNetworkConfiguration configuration = manager.defaultConfiguration();
@@ -27,7 +27,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(server,SIGNAL(newConnection()),this,SLOT(newConnection()));
 
-    Ts=30;
+    Ts=60;
     timer.setInterval(Ts);
     connect(&timer,SIGNAL(timeout()),this,SLOT(on_timer()));
 
@@ -99,10 +99,18 @@ void MainWindow::newMessage()
         {
             QDataStream data(clients.at(i));
             data >> key;
-            if(key == Qt::Key_Up || key == Qt::Key_Down || key == Qt::Key_Left || key == Qt::Key_Right )
+            if(key == -22) // Zmiana poziomu
+            {
+                QTextStream out(stdout);
+                out << "tak232" << endl;
+                wyslanoKoniecPoziomu = 0;
+                zmienPoziom(aktualnyPoziom+1);
+            }
+            else if(key == Qt::Key_Up || key == Qt::Key_Down || key == Qt::Key_Left || key == Qt::Key_Right )
                 ruchOdrzutowy(key,i);
 
         }
+        clients.at(i)->readAll();
 
     }
 }
@@ -155,7 +163,8 @@ void MainWindow::ruchFigur()
         {
             if( i < clients.size() )
             {
-                zmienPoziom(aktualnyPoziom);
+                timer.stop();
+                //zmienPoziom(aktualnyPoziom);
             }
             else
             {
@@ -259,7 +268,7 @@ void MainWindow::zjadanieMniejszych()
         }
         else if(graczAktywny == -1)
         {
-            zmienPoziom(aktualnyPoziom);
+            koniecPoziomu(-1);
         }
 
         // zrobić warunek konca poziomu - zjeść przeciwnika, czy wszystkich ?
@@ -311,7 +320,8 @@ void MainWindow::zmienPoziom(int i)
 
         }
     }
-    potwierdzenieZmianyPoziomu = 0;
+    wyslanoKoniecPoziomu = 0;
+    zmiana = 0;
     timer.start(Ts);
 
 }
@@ -421,27 +431,38 @@ void MainWindow::on_pushButtonStop_clicked()
 void MainWindow::koniecPoziomu(int graczAktywny)
 {
     enum {FIGURY,INFO,KONIEC_POZIOMU};
-    // timer.stop();
     if(wyslanoKoniecPoziomu != 1) // w wiadomosci zwrotnej ustawić na 0
     {
-            wyslanoKoniecPoziomu = 1;
-    for (int i=0; i<clients.size();i++)
-    {
-        QTcpSocket *tmp = clients.at(i);
-        if(tmp->isWritable())
+        wyslanoKoniecPoziomu = 1;
+        timer.stop();
+        for (int i=0; i<clients.size();i++)
         {
-            QDataStream data(tmp);
-            data << KONIEC_POZIOMU;
-            if (i != graczAktywny)
-                data << false; // Przegrana
-            else
-                data << true; // Wygrana
+            QTcpSocket *tmp = clients.at(i);
+            if(tmp->isWritable())
+            {
+                QDataStream data(tmp);
+                data << KONIEC_POZIOMU;
+                if(clients.size() == 1 && graczAktywny == -1)
+                    data << 0; // przegrana
+                else if(clients.size() > 1 && graczAktywny == -1)
+                    data << 2; // remis;
+                else
+                {
+                    if (i != graczAktywny)
+                    {
+                        data << 0; // Przegrana
+                        QTextStream out(stdout);
+                        out << "Przegal" << endl;
+                    }
+                    else
+                        data << 1; // Wygrana
+                }
 
+            }
         }
+        timer.start(Ts);
     }
 
-    }
-    // timer.start(Ts);
-//    if(potwierdzenieZmianyPoziomu == true)
-//        zmienPoziom(aktualnyPoziom+1);
+    //    if(zmiana= true)
+    //        zmienPoziom(aktualnyPoziom+1);
 }

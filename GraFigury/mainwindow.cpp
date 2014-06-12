@@ -1,27 +1,25 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include <ui_mainwindow.h>
+#include <mainwindow.h>
 #include <QList>
 #include <QTextStream>
 #include <QString>
 #include <QKeyEvent>
+
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    wynik = 0;
     socket = new QTcpSocket(this);
     dialog = new Dialog(this);
-    dialog2 = new Dialog(this);
+    dialog2 = new Dialog2(this);
     connect(socket,SIGNAL(readyRead()),SLOT(newMessage()));
+    connect(dialog2,SIGNAL(zmienPoziom()),this,SLOT(zmienPoziomMessage()));
     connect(dialog,SIGNAL(connectToServer(QString,int)),this,SLOT(connectToServer(QString,int)));
-    //    ui->tableWidget->insertRow(1);
-    //    ui->tableWidget->addAction(new QAction("Co tototo",this));
-    //    ui->tableWidget->setVerticalHeaderItem(1,new QTableWidgetItem("Gracz 2"));
-    //   // ui->tableWidget->setA
 
-
-    //    ui->tableWidget->setItem(0,0,new QTableWidgetItem("CO"));
 }
 
 MainWindow::~MainWindow()
@@ -86,23 +84,33 @@ void MainWindow::newMessage()
             break;
         }
         case KONIEC_POZIOMU:
-            bool wygrana;
+        {
+            int wygrana;
             data >> wygrana;
             QTextStream out(stdout);
             out << "działa" << endl;
-            if(wygrana)
-                if(!(dialog2->isVisible()))
-                dialog2->show();
-            else
-                    if(!(dialog2->isVisible()))
-                    dialog->show();
-            break;
+            switch(wygrana)
+            {
 
+            case 0:
+            {
+                dialog2->ustawWiadomosc("Przegrałeś\nWciśnij OK aby przejść dalej");
+                break;
+            }
+            case 1:
+                dialog2->ustawWiadomosc("\tWygrałeś,\nWciśnij OK aby przejść dalej");
+             ui->labelWynik->setText(QString::number(wynik+1));
+                break;
+            case 2:
+                dialog2->ustawWiadomosc("\tRemis,\nWciśnij OK aby przejść dalej");
+                break;
+            }
+            dialog2->show();
         }
 
-      socket->readAll(); // WAŻNEEEE: dzięki temu nie opoźnia się gra  ?????
+         //   socket->readAll(); // WAŻNEEEE: dzięki temu nie opoźnia się gra  ?????
+        }
     }
-
 
 
     ui->widget->updateGL();
@@ -112,8 +120,8 @@ void MainWindow::newMessage()
 
 void MainWindow::on_pushButtonPolacz_clicked()
 {
-    dialog->show();
 
+    dialog->show();
 }
 
 
@@ -125,7 +133,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     {
     case Qt::Key_Plus:
         ui->widget->zmienOrtho(-2);
-    break;
+        break;
     case Qt::Key_Minus:
         ui->widget->zmienOrtho(2);
 
@@ -140,4 +148,15 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 
     }
 
+}
+
+void MainWindow::zmienPoziomMessage()
+{
+    if(socket->isWritable())
+    {
+    QDataStream data(socket);
+        data << -22; // Taka liczba
+        QTextStream out(stdout);
+        out << "tak" << endl;
+    }
 }

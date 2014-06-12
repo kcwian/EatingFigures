@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>382</width>
-    <height>227</height>
+    <width>248</width>
+    <height>160</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,27 +16,27 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>50</y>
+     <x>50</x>
+     <y>30</y>
      <width>311</width>
-     <height>16</height>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>Przegrałeś, wciśnij przycisk aby kontynować</string>
+    <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>140</x>
-     <y>140</y>
-     <width>85</width>
-     <height>26</height>
+     <x>80</x>
+     <y>100</y>
+     <width>99</width>
+     <height>27</height>
     </rect>
    </property>
    <property name="text">
-    <string>PushButton</string>
+    <string>OK</string>
    </property>
   </widget>
  </widget>

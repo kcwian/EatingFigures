@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
@@ -28,6 +29,8 @@ public:
     QWidget *centralWidget;
     MyGLWidget *widget;
     QPushButton *pushButtonPolacz;
+    QLabel *labelWynik1;
+    QLabel *labelWynik;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -45,6 +48,19 @@ public:
         pushButtonPolacz = new QPushButton(centralWidget);
         pushButtonPolacz->setObjectName(QStringLiteral("pushButtonPolacz"));
         pushButtonPolacz->setGeometry(QRect(710, 540, 129, 27));
+        labelWynik1 = new QLabel(centralWidget);
+        labelWynik1->setObjectName(QStringLiteral("labelWynik1"));
+        labelWynik1->setGeometry(QRect(740, 20, 67, 17));
+        labelWynik1->setAlignment(Qt::AlignCenter);
+        labelWynik = new QLabel(centralWidget);
+        labelWynik->setObjectName(QStringLiteral("labelWynik"));
+        labelWynik->setGeometry(QRect(740, 40, 67, 17));
+        QFont font;
+        font.setPointSize(12);
+        font.setBold(true);
+        font.setWeight(75);
+        labelWynik->setFont(font);
+        labelWynik->setAlignment(Qt::AlignCenter);
         MainWindow->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
@@ -57,8 +73,10 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Gra", 0));
         pushButtonPolacz->setText(QApplication::translate("MainWindow", "Po\305\202\304\205cz", 0));
+        labelWynik1->setText(QApplication::translate("MainWindow", "Wynik:", 0));
+        labelWynik->setText(QApplication::translate("MainWindow", "0", 0));
     } // retranslateUi
 
 };

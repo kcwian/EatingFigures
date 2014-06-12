@@ -59,7 +59,7 @@ private:
     QTimer timer;
     int Ts;
     int aktualnyPoziom;
-    bool potwierdzenieZmianyPoziomu, wyslanoKoniecPoziomu;
+    bool zmiana, wyslanoKoniecPoziomu;
 
 
 
