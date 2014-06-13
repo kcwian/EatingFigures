@@ -113,6 +113,7 @@ public:
         comboBox->insertItems(0, QStringList()
          << QApplication::translate("MainWindow", "Poziom 0", 0)
          << QApplication::translate("MainWindow", "Poziom 1", 0)
+         << QApplication::translate("MainWindow", "Poziom 2", 0)
         );
         pushButtonStart->setText(QApplication::translate("MainWindow", "START", 0));
         pushButtonStop->setText(QApplication::translate("MainWindow", "STOP", 0));

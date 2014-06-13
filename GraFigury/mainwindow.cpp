@@ -42,8 +42,6 @@ void MainWindow::connectToServer(QString ip,int port)
 
 void MainWindow::newMessage()
 {
-    enum {FIGURY,INFO,KONIEC_POZIOMU};
-
     if (socket->isReadable())
     {
 
@@ -69,6 +67,7 @@ void MainWindow::newMessage()
         }
         case INFO:
         {
+            dialog2->hide();
             for (int i=0; i<listaOdcinkow.size();i++)
             {
                 delete listaOdcinkow.at(i);
@@ -83,29 +82,26 @@ void MainWindow::newMessage()
             ui->widget->przeslijInfo(listaOdcinkow,ramkaPrzyblizania,nrKlienta);
             break;
         }
-        case KONIEC_POZIOMU:
+        case KONIEC:
         {
             int wygrana;
             data >> wygrana;
-            QTextStream out(stdout);
-            out << "działa" << endl;
             switch(wygrana)
             {
-
-            case 0:
-            {
-                dialog2->ustawWiadomosc("Przegrałeś\nWciśnij OK aby przejść dalej");
+            case PRZEGRANA:
+                dialog2->ustawWiadomosc("Przegrałeś\n\nWciśnij OK aby kontynować");
                 break;
-            }
-            case 1:
-                dialog2->ustawWiadomosc("\tWygrałeś,\nWciśnij OK aby przejść dalej");
+            case WYGRANA:
+                dialog2->ustawWiadomosc("Wygrałeś\n\nWciśnij OK aby kontynować");
              ui->labelWynik->setText(QString::number(wynik+1));
                 break;
-            case 2:
-                dialog2->ustawWiadomosc("\tRemis,\nWciśnij OK aby przejść dalej");
+            case REMIS:
+                dialog2->ustawWiadomosc("Remis\n\nWciśnij OK aby kontynować");
                 break;
             }
+             dialog2->adjustSize();
             dialog2->show();
+
         }
 
          //   socket->readAll(); // WAŻNEEEE: dzięki temu nie opoźnia się gra  ?????
@@ -155,8 +151,7 @@ void MainWindow::zmienPoziomMessage()
     if(socket->isWritable())
     {
     QDataStream data(socket);
-        data << -22; // Taka liczba
-        QTextStream out(stdout);
-        out << "tak" << endl;
+        data << ZMIANA;
     }
+
 }

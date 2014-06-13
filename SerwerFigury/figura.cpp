@@ -23,8 +23,8 @@ Figura::Figura(float x_, float y_)
     kolor[1] = (float) (rand()%101)/100;
     kolor[2] = (float) (rand()%101)/100;
     kolor[3] =  1;
-    predkosc[0] = rand()%41-20;
-    predkosc[1] = rand()%41-20;
+    predkosc[0] = rand()%21-10;
+    predkosc[1] = rand()%21-10;
 
     omega = rand()%60-30;
     alpha = 0;

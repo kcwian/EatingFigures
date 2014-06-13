@@ -20,7 +20,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    enum {FIGURY,INFO};
+    enum {FIGURY,INFO,KONIEC,WYGRANA,PRZEGRANA,REMIS,ZMIANA};
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
@@ -43,6 +43,7 @@ private:
     void zjadanieMniejszych();
     void usunOdicnki();
     void usunFigury();
+    int zwrocLiczbeAktywnychGraczy(int &);
 
     Ui::MainWindow *ui;
     QTcpServer *server;
@@ -59,7 +60,7 @@ private:
     QTimer timer;
     int Ts;
     int aktualnyPoziom;
-    bool zmiana, wyslanoKoniecPoziomu;
+    bool wyslanoKoniecPoziomu;
 
 
 

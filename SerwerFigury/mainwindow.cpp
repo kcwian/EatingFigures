@@ -27,7 +27,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(server,SIGNAL(newConnection()),this,SLOT(newConnection()));
 
-    Ts=60;
+    Ts=30;
     timer.setInterval(Ts);
     connect(&timer,SIGNAL(timeout()),this,SLOT(on_timer()));
 
@@ -99,12 +99,24 @@ void MainWindow::newMessage()
         {
             QDataStream data(clients.at(i));
             data >> key;
-            if(key == -22) // Zmiana poziomu
+            if(key == ZMIANA) // Zmiana poziomu
             {
-                QTextStream out(stdout);
-                out << "tak232" << endl;
-                wyslanoKoniecPoziomu = 0;
-                zmienPoziom(aktualnyPoziom+1);
+                int tmp = -1;
+                if(zwrocLiczbeAktywnychGraczy(tmp) > 1) // 2 i więcej graczy
+                {
+                    if (tmp != -1)
+                        zmienPoziom(aktualnyPoziom+1);
+                    else
+                        zmienPoziom(aktualnyPoziom);
+                }
+                else // jeden gracz
+                {
+                    if(tmp != -1)
+                        zmienPoziom(aktualnyPoziom+1);
+                    else
+                        zmienPoziom(aktualnyPoziom);
+                }
+
             }
             else if(key == Qt::Key_Up || key == Qt::Key_Down || key == Qt::Key_Left || key == Qt::Key_Right )
                 ruchOdrzutowy(key,i);
@@ -134,7 +146,6 @@ void MainWindow::on_timer()
     for (int i=0; i< clients.size(); i++)
     {
         QTcpSocket *tmp = clients.at(i);
-        // if(tmp->isWritable())
 
         if(tmp->isWritable())
         {
@@ -163,8 +174,9 @@ void MainWindow::ruchFigur()
         {
             if( i < clients.size() )
             {
-                timer.stop();
-                //zmienPoziom(aktualnyPoziom);
+                tmp->ustawRozmiar(0);
+                tmp->ustawPredkoscX(0);
+                tmp->ustawPredkoscY(0);
             }
             else
             {
@@ -246,27 +258,14 @@ void MainWindow::zjadanieMniejszych()
         }
 
         // Sprawdzanie czy koniec poziomu - musi być jeden aktywny gracz i miec pole większe niż suma pól pozostałych figur
-        int liczbaAktywnychGraczy=0, graczAktywny = -1, tmp = -1;
-        for(int i=0;i < clients.size();i++)
+        int jedynyAktywny = -1;
+        int liczbaAktywnychGraczy = zwrocLiczbeAktywnychGraczy(jedynyAktywny);
+
+        if(jedynyAktywny !=-1 && listaFigur.at(jedynyAktywny)->zwrocPole() > sumaPol-listaFigur.at(jedynyAktywny)->zwrocPole())
         {
-            if(listaFigur.at(i)->zwrocPole()>0.25)
-            {
-                liczbaAktywnychGraczy++;
-            }
-            if(liczbaAktywnychGraczy == 1)
-            {
-                tmp = i;
-            }
+            koniecPoziomu(jedynyAktywny);
         }
-        if(liczbaAktywnychGraczy == 1)
-        {
-            graczAktywny = tmp;
-        }
-        if(graczAktywny !=-1 && listaFigur.at(graczAktywny)->zwrocPole() > sumaPol-listaFigur.at(graczAktywny)->zwrocPole())
-        {
-            koniecPoziomu(graczAktywny);
-        }
-        else if(graczAktywny == -1)
+        else if(liczbaAktywnychGraczy == 0)
         {
             koniecPoziomu(-1);
         }
@@ -321,7 +320,6 @@ void MainWindow::zmienPoziom(int i)
         }
     }
     wyslanoKoniecPoziomu = 0;
-    zmiana = 0;
     timer.start(Ts);
 
 }
@@ -428,9 +426,9 @@ void MainWindow::on_pushButtonStop_clicked()
     timer.stop();
 }
 
-void MainWindow::koniecPoziomu(int graczAktywny)
+void MainWindow::koniecPoziomu(int jedynyAktywny)
 {
-    enum {FIGURY,INFO,KONIEC_POZIOMU};
+
     if(wyslanoKoniecPoziomu != 1) // w wiadomosci zwrotnej ustawić na 0
     {
         wyslanoKoniecPoziomu = 1;
@@ -441,28 +439,37 @@ void MainWindow::koniecPoziomu(int graczAktywny)
             if(tmp->isWritable())
             {
                 QDataStream data(tmp);
-                data << KONIEC_POZIOMU;
-                if(clients.size() == 1 && graczAktywny == -1)
-                    data << 0; // przegrana
-                else if(clients.size() > 1 && graczAktywny == -1)
-                    data << 2; // remis;
+                data << KONIEC;
+                if(clients.size() == 1 && jedynyAktywny == -1)
+                    data << PRZEGRANA;
+                else if(clients.size() > 1 && (jedynyAktywny == -1))
+                    data << REMIS; // remis;
+                else if (i != jedynyAktywny)
+                    data << PRZEGRANA; // Przegrana
                 else
-                {
-                    if (i != graczAktywny)
-                    {
-                        data << 0; // Przegrana
-                        QTextStream out(stdout);
-                        out << "Przegal" << endl;
-                    }
-                    else
-                        data << 1; // Wygrana
-                }
-
+                    data << WYGRANA; // Wygrana
             }
         }
         timer.start(Ts);
     }
 
-    //    if(zmiana= true)
-    //        zmienPoziom(aktualnyPoziom+1);
 }
+
+int MainWindow::zwrocLiczbeAktywnychGraczy(int &jedynyAktywny)
+{
+    int tmp = 0, liczbaAktywnychGraczy = 0;
+    for(int i=0;i < clients.size();i++)
+    {
+        if(listaFigur.at(i)->zwrocPole()>0.25)
+        {
+            liczbaAktywnychGraczy++;
+            tmp = i;
+        }
+    }
+    if(liczbaAktywnychGraczy == 1)
+    {
+        jedynyAktywny = tmp;
+    }
+    return liczbaAktywnychGraczy;
+}
+
