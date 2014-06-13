@@ -13,16 +13,18 @@ void Poziomy::inicjalizuj(int i,int &ramkaPrzyblizania,QList <Figura*> &list, QL
     {
     case 0:
     {
+
+        ramkaPrzyblizania = 52;
+        int d = 90/liczbaKlientow;
         for (int i = 0; i<liczbaKlientow; i++)
         {
-            Figura *ster = new Kolo(-30,25+i*5,4);
+
+            Figura *ster = new Kolo(-40+i*d,0,4);
             ster->ustawPredkoscX(0);
             ster->ustawPredkoscY(0);
             ster->ustawOmega(0);
             list.append(ster);
         }
-        ramkaPrzyblizania = 52;
-
 
         Figura *nowa2;
         for (int j=-45; j<45; j+=20)
@@ -48,11 +50,11 @@ void Poziomy::inicjalizuj(int i,int &ramkaPrzyblizania,QList <Figura*> &list, QL
     }
     case 1:
     {
-        ramkaPrzyblizania = 80;
-
+        ramkaPrzyblizania = 52;
+        int d = 140/liczbaKlientow;
         for (int i = 0; i<liczbaKlientow; i++)
         {
-            Figura *ster = new Kolo(qrand()%100-50,qrand()%100-50,2);
+            Figura *ster = new Kwadrat(-25+i*d,0,5);
             ster->ustawPredkoscX(0);
             ster->ustawPredkoscY(0);
             ster->ustawOmega(0);
@@ -60,21 +62,20 @@ void Poziomy::inicjalizuj(int i,int &ramkaPrzyblizania,QList <Figura*> &list, QL
         }
 
         Figura *nowa2;
-        for (int j=-25; j<45; j+=20)
+        for (int j= -30; j<=30; j+=10)
         {
-            for (int i = -45; i<25;i+=20)
+            for (int i = -30; i<=30;i+=10)
             {
-
-                nowa2 = new Trojkat(i,j,3);
-                nowa2->ustawPredkoscX(1);
-                nowa2->ustawPredkoscY(1);
+                nowa2 = new Kwadrat(i,j,3);
+//                nowa2->ustawPredkoscX(1);
+//                nowa2->ustawPredkoscY(1);
                 list.append(nowa2);
             }
 
         }
 
-        float r = 80; // promien
-        int n = 3;
+        float r = 50; // promien
+        int n = 6;
         float kat = 2*3.1415/n;
         for (int i=0, j=0; i<n; i++)
         {
@@ -87,19 +88,23 @@ void Poziomy::inicjalizuj(int i,int &ramkaPrzyblizania,QList <Figura*> &list, QL
 
     case 2:
     {
-        ramkaPrzyblizania = 80;
-        list.append(new Kolo(0,0,10)); // pierwsza to sterowana
-
-        float r = 80; // promien
-        int n = 4;
-
-        float kat = 2*3.1415/n;
-        for (int i=0, j=0; i<n; i++)
+        ramkaPrzyblizania = 52;
+        int d = 90/liczbaKlientow;
+        for(int i=0;i<liczbaKlientow;i++)
         {
-            j = i+1;
-            listaOdcinkow.append(new Odcinek(r*qCos(i*kat),r*qSin(i*kat),r*qCos(j*kat),r*qSin(j*kat)));
-
+        list.append(new Kolo(-25+i*d,-25,5)); // pierwsza to sterowana
         }
+        for(int i =-40; i<40; i+=8)
+        {
+            list.append(new Kolo(25,i,3));
+        }
+
+        listaOdcinkow.append(new Odcinek(-50,-50,50,-50));
+        listaOdcinkow.append(new Odcinek(50,-50,50,50));
+        listaOdcinkow.append(new Odcinek(0,50,50,50));
+        listaOdcinkow.append(new Odcinek(0,0,0,50));
+        listaOdcinkow.append(new Odcinek(-50,0,0,0));
+        listaOdcinkow.append(new Odcinek(-50,0,-50,-50));
 
     }
     case 3:

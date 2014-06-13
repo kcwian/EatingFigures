@@ -1,0 +1,16 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\myglwidget.o
+./debug\figura.o
+./debug\kolo.o
+./debug\kwadrat.o
+./debug\trojkat.o
+./debug\odcinek.o
+./debug\dialog.o
+./debug\dialog2.o
+./debug\moc_mainwindow.o
+./debug\moc_myglwidget.o
+./debug\moc_dialog.o
+./debug\moc_dialog2.o
+);

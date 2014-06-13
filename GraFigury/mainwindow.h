@@ -22,6 +22,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    enum {FIGURY,INFO,KONIEC,WYGRANA,PRZEGRANA,REMIS,ZMIANA};
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 

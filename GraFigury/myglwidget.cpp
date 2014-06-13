@@ -38,14 +38,13 @@ void MyGLWidget::resizeGL(int w, int h)
     glViewport((w-s)/2, (h-s)/2, s, s);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    static QPoint sterowanaLastPos; // pozycja sterowanej tuz przed wartoscOrho<ramkaPrzyblizania
-    if(sterowana !=0 && (sterowana->zwrocRozmiar() == 0))
-    {
-         int a = 2*ramkaPrzyblizania;
-         glOrtho(-a,a,-a,a, -1 ,1 );
+//    if(sterowana !=0 && (sterowana->zwrocRozmiar() == 0))
+//    {
+//         int a = 1.5*ramkaPrzyblizania;
+//         glOrtho(-a,a,-a,a, -1 ,1 );
 
-    }
-    else if(wartoscOrtho <= ramkaPrzyblizania && sterowana != 0)
+//    }
+  /*  else*/ if(wartoscOrtho <= ramkaPrzyblizania && sterowana != 0)
     {
         float x = sterowana->zwrocPolozenieX(), y = sterowana->zwrocPolozenieY();
         glOrtho(-wartoscOrtho+x, wartoscOrtho+x, -wartoscOrtho+y, wartoscOrtho+y, -1 ,1 );
