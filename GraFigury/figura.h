@@ -5,7 +5,11 @@
 #include <QDataStream>
 
 using namespace std;
-
+/*!
+ * \brief The Figura class
+ *
+ * Klasa bazowa dla klasy Kolo, Kwadrat, Trojkat
+ */
 class Figura // Figury nie mają zmiennej Pole, jest ono wyliczane z rozmiaru
 {
 

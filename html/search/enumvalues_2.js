@@ -1,0 +1,9 @@
+var searchData=
+[
+  ['kolo',['KOLO',['../d9/d07/classFigura.html#aa2d4be66eee786b08617f14e5c1786d6a4437d7afd63785b800b0f3260b12fb02',1,'Figura::KOLO()'],['../d0/da8/classMyGLWidget.html#a349b4124c85266bef75a190246dca82eafafafccf4bbe772769c94573d5f3101e',1,'MyGLWidget::KOLO()'],['../d5/d84/classPoziomy.html#afc13fed3fe34dbde1fa8323ca7563baea98b177f62525aaa6740a841b9307d684',1,'Poziomy::KOLO()']]],
+  ['kolo_5fkwadrat',['KOLO_KWADRAT',['../d9/d07/classFigura.html#aa2d4be66eee786b08617f14e5c1786d6aca5f505db3a8ad71c5ba3c5522f7850d',1,'Figura::KOLO_KWADRAT()'],['../d5/d84/classPoziomy.html#afc13fed3fe34dbde1fa8323ca7563baea401b10db62af9dc2e1d8f7b4f0858173',1,'Poziomy::KOLO_KWADRAT()']]],
+  ['kolo_5ftrojkat',['KOLO_TROJKAT',['../d9/d07/classFigura.html#aa2d4be66eee786b08617f14e5c1786d6a83c12346d3bb84606b92ec06a12de9df',1,'Figura::KOLO_TROJKAT()'],['../d5/d84/classPoziomy.html#afc13fed3fe34dbde1fa8323ca7563baea3e1519272495b90b0ad0ad07f617dce5',1,'Poziomy::KOLO_TROJKAT()']]],
+  ['kwadrat',['KWADRAT',['../d9/d07/classFigura.html#aa2d4be66eee786b08617f14e5c1786d6abb9c7c24fdf57ec1105b935409abc923',1,'Figura::KWADRAT()'],['../d0/da8/classMyGLWidget.html#a349b4124c85266bef75a190246dca82ea83219b17f1da7d6ff531f1f616f1f497',1,'MyGLWidget::KWADRAT()'],['../d5/d84/classPoziomy.html#afc13fed3fe34dbde1fa8323ca7563baea691b30487e8a683cef80dd9196b9d868',1,'Poziomy::KWADRAT()']]],
+  ['kwadrat_5fkolo',['KWADRAT_KOLO',['../d9/d07/classFigura.html#aa2d4be66eee786b08617f14e5c1786d6a52f5d0a124a5ba9039a864a13ab58d7e',1,'Figura::KWADRAT_KOLO()'],['../d5/d84/classPoziomy.html#afc13fed3fe34dbde1fa8323ca7563baea83db2f995adc12d02fb0e861966c6ec1',1,'Poziomy::KWADRAT_KOLO()']]],
+  ['kwadrat_5ftrojkat',['KWADRAT_TROJKAT',['../d9/d07/classFigura.html#aa2d4be66eee786b08617f14e5c1786d6a9099cc2a327bd9fa23fea4966fd6bcd3',1,'Figura::KWADRAT_TROJKAT()'],['../d5/d84/classPoziomy.html#afc13fed3fe34dbde1fa8323ca7563baeaadec9c72835621187a256f8e77c9174e',1,'Poziomy::KWADRAT_TROJKAT()']]]
+];

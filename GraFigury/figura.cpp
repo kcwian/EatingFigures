@@ -8,6 +8,11 @@
 
 using namespace std;
 
+/*!
+ * \brief Konstruktor domyślny
+ *
+ * Ustawia położenie figury w punkcie (0,0)
+ */
 Figura::Figura()
 {
 

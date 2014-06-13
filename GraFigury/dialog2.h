@@ -6,6 +6,11 @@
 namespace Ui {
 class Dialog2;
 }
+/*!
+ * \brief Okno Dialogowe
+ *
+ * Wyświetlane po ukończeniu poziomu
+ */
 
 class Dialog2 : public QDialog
 {

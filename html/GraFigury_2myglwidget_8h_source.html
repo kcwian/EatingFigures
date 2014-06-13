@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Gra: Plik źródłowy GraFigury/myglwidget.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Gra
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="namespaces.html"><span>Przestrzenie&#160;nazw</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
+      <li><a href="globals.html"><span>Składowe&#160;plików</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Przyjaciele</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Definicje</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_13acb7c8675812a25792b2766a56488d.html">GraFigury</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">myglwidget.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="GraFigury_2myglwidget_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MYGLWIDGET_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MYGLWIDGET_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QGLWidget&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QPointF&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="GraFigury_2kolo_8h.html">kolo.h</a>&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="GraFigury_2kwadrat_8h.html">kwadrat.h</a>&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="GraFigury_2trojkat_8h.html">trojkat.h</a>&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QList&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QTimer&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="GraFigury_2poziomy_8h.html">poziomy.h</a>&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="GraFigury_2odcinek_8h.html">odcinek.h</a>&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classMyGLWidget.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMyGLWidget.html">MyGLWidget</a> : <span class="keyword">public</span> QGLWidget</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classMyGLWidget.html#a349b4124c85266bef75a190246dca82ead114f07fe7235d3994ecc8e8270ffbdf">   18</a></span>&#160;    <span class="keyword">enum</span> {<a class="code" href="classMyGLWidget.html#a349b4124c85266bef75a190246dca82eafafafccf4bbe772769c94573d5f3101e">KOLO</a>, <a class="code" href="classMyGLWidget.html#a349b4124c85266bef75a190246dca82ea83219b17f1da7d6ff531f1f616f1f497">KWADRAT</a>, <a class="code" href="classMyGLWidget.html#a349b4124c85266bef75a190246dca82ead114f07fe7235d3994ecc8e8270ffbdf">TROJKAT</a>};</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classMyGLWidget.html#a2b3f2523eae378b2a4a5f66bd176be57">MyGLWidget</a>(QWidget *parent = 0);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classMyGLWidget.html#aefac459d382b61ea5589ff6269ecdf73">~MyGLWidget</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMyGLWidget.html#af0ec25e9dee6351a690c26a392cde121">przeslijFigury</a>(QList &lt;Figura*&gt; &amp;);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMyGLWidget.html#a23624367d20ad8ca6a09f283ccb92c31">przeslijInfo</a>(QList &lt;Odcinek*&gt; &amp;,<span class="keywordtype">int</span> <a class="code" href="classMyGLWidget.html#ae1dab2275c515885d170d48a682d1943">ramkaPrzyblizania</a>, <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMyGLWidget.html#a3cecbb2f5658f148e6e5d8ef3a3cc5e5">zmienOrtho</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMyGLWidget.html#a5c536c2ebab76533eb16eac0a9830c8e">initializeGL</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMyGLWidget.html#adca50638295dc5d284f4f042331e82a0">resizeGL</a>(<span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMyGLWidget.html#ad0e4171fab09ad54d4e2d23e7d6541eb">paintGL</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;   <span class="comment">// void keyPressEvent(QKeyEvent *);</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMyGLWidget.html#a98f0ba932652fe25ae3a469a9b6ee7e5">mousePressEvent</a>(QMouseEvent *);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMyGLWidget.html#ac6f3e3d95c1d8b22325437d925812212">mouseMoveEvent</a>(QMouseEvent *);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMyGLWidget.html#a55f9a6c836a9362f59976f86e98a34d8">wheelEvent</a>(QWheelEvent *);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMyGLWidget.html#a802184e7a48ae2a79f3daf4519e4fc66">animacjaPrzyblizania</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;   <span class="comment">// void przeslijDane(QList &lt;Figura*&gt; &amp;,QList &lt;Odcinek*&gt; &amp;);</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classMyGLWidget.html#a2a7fab72a9434ab8a32f67768f758011">   37</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classMyGLWidget.html#a2a7fab72a9434ab8a32f67768f758011">wartoscOrtho</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classMyGLWidget.html#ae1dab2275c515885d170d48a682d1943">   38</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classMyGLWidget.html#ae1dab2275c515885d170d48a682d1943">ramkaPrzyblizania</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classMyGLWidget.html#a8d0f06e3361addec1ba11fe317de2c60">   39</a></span>&#160;    GLfloat <a class="code" href="classMyGLWidget.html#a8d0f06e3361addec1ba11fe317de2c60">tlo</a>[4];</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classMyGLWidget.html#abaf64d08c7bac0df986839ac063b02c2">   40</a></span>&#160;    QList &lt;Figura*&gt; <a class="code" href="classMyGLWidget.html#abaf64d08c7bac0df986839ac063b02c2">listaFigur</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classMyGLWidget.html#a8bffb841dfb582085520d96a83ae09b9">   41</a></span>&#160;    QList &lt;Odcinek*&gt; <a class="code" href="classMyGLWidget.html#a8bffb841dfb582085520d96a83ae09b9">listaOdcinkow</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classMyGLWidget.html#afaf6be98dbfe311829f71f5b97ab6081">   42</a></span>&#160;    <a class="code" href="classFigura.html">Figura</a> *<a class="code" href="classMyGLWidget.html#afaf6be98dbfe311829f71f5b97ab6081">sterowana</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classMyGLWidget.html#afc6be3de6cfab3079b8d36ab85d13317">   43</a></span>&#160;    QPointF <a class="code" href="classMyGLWidget.html#afc6be3de6cfab3079b8d36ab85d13317">lastPos</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classMyGLWidget.html#ab3fcfaa0bcedb9ee1b56fdacf58499ba">   44</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classMyGLWidget.html#ab3fcfaa0bcedb9ee1b56fdacf58499ba">aktualnyPoziom</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classMyGLWidget.html#aa3f67be6e4f2bf11f257d5843d17e8aa">   45</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classMyGLWidget.html#aa3f67be6e4f2bf11f257d5843d17e8aa">nrKlienta</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;signals:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif // MYGLWIDGET_H</span></div>
+<div class="ttc" id="GraFigury_2kwadrat_8h_html"><div class="ttname"><a href="GraFigury_2kwadrat_8h.html">kwadrat.h</a></div></div>
+<div class="ttc" id="classMyGLWidget_html_ae1dab2275c515885d170d48a682d1943"><div class="ttname"><a href="classMyGLWidget.html#ae1dab2275c515885d170d48a682d1943">MyGLWidget::ramkaPrzyblizania</a></div><div class="ttdeci">int ramkaPrzyblizania</div><div class="ttdef"><b>Definition:</b> myglwidget.h:38</div></div>
+<div class="ttc" id="classMyGLWidget_html_a5c536c2ebab76533eb16eac0a9830c8e"><div class="ttname"><a href="classMyGLWidget.html#a5c536c2ebab76533eb16eac0a9830c8e">MyGLWidget::initializeGL</a></div><div class="ttdeci">void initializeGL()</div><div class="ttdef"><b>Definition:</b> myglwidget.cpp:29</div></div>
+<div class="ttc" id="classMyGLWidget_html_a2a7fab72a9434ab8a32f67768f758011"><div class="ttname"><a href="classMyGLWidget.html#a2a7fab72a9434ab8a32f67768f758011">MyGLWidget::wartoscOrtho</a></div><div class="ttdeci">int wartoscOrtho</div><div class="ttdef"><b>Definition:</b> myglwidget.h:37</div></div>
+<div class="ttc" id="classFigura_html"><div class="ttname"><a href="classFigura.html">Figura</a></div><div class="ttdoc">The Figura class. </div><div class="ttdef"><b>Definition:</b> figura.h:13</div></div>
+<div class="ttc" id="classMyGLWidget_html_afc6be3de6cfab3079b8d36ab85d13317"><div class="ttname"><a href="classMyGLWidget.html#afc6be3de6cfab3079b8d36ab85d13317">MyGLWidget::lastPos</a></div><div class="ttdeci">QPointF lastPos</div><div class="ttdef"><b>Definition:</b> myglwidget.h:43</div></div>
+<div class="ttc" id="classMyGLWidget_html_ad0e4171fab09ad54d4e2d23e7d6541eb"><div class="ttname"><a href="classMyGLWidget.html#ad0e4171fab09ad54d4e2d23e7d6541eb">MyGLWidget::paintGL</a></div><div class="ttdeci">void paintGL()</div><div class="ttdef"><b>Definition:</b> myglwidget.cpp:64</div></div>
+<div class="ttc" id="classMyGLWidget_html_a8bffb841dfb582085520d96a83ae09b9"><div class="ttname"><a href="classMyGLWidget.html#a8bffb841dfb582085520d96a83ae09b9">MyGLWidget::listaOdcinkow</a></div><div class="ttdeci">QList&lt; Odcinek * &gt; listaOdcinkow</div><div class="ttdef"><b>Definition:</b> myglwidget.h:41</div></div>
+<div class="ttc" id="classMyGLWidget_html_a55f9a6c836a9362f59976f86e98a34d8"><div class="ttname"><a href="classMyGLWidget.html#a55f9a6c836a9362f59976f86e98a34d8">MyGLWidget::wheelEvent</a></div><div class="ttdeci">void wheelEvent(QWheelEvent *)</div><div class="ttdef"><b>Definition:</b> myglwidget.cpp:128</div></div>
+<div class="ttc" id="classMyGLWidget_html_ac6f3e3d95c1d8b22325437d925812212"><div class="ttname"><a href="classMyGLWidget.html#ac6f3e3d95c1d8b22325437d925812212">MyGLWidget::mouseMoveEvent</a></div><div class="ttdeci">void mouseMoveEvent(QMouseEvent *)</div><div class="ttdef"><b>Definition:</b> myglwidget.cpp:114</div></div>
+<div class="ttc" id="classMyGLWidget_html_afaf6be98dbfe311829f71f5b97ab6081"><div class="ttname"><a href="classMyGLWidget.html#afaf6be98dbfe311829f71f5b97ab6081">MyGLWidget::sterowana</a></div><div class="ttdeci">Figura * sterowana</div><div class="ttdef"><b>Definition:</b> myglwidget.h:42</div></div>
+<div class="ttc" id="classMyGLWidget_html_a349b4124c85266bef75a190246dca82eafafafccf4bbe772769c94573d5f3101e"><div class="ttname"><a href="classMyGLWidget.html#a349b4124c85266bef75a190246dca82eafafafccf4bbe772769c94573d5f3101e">MyGLWidget::KOLO</a></div><div class="ttdef"><b>Definition:</b> myglwidget.h:18</div></div>
+<div class="ttc" id="classMyGLWidget_html_aa3f67be6e4f2bf11f257d5843d17e8aa"><div class="ttname"><a href="classMyGLWidget.html#aa3f67be6e4f2bf11f257d5843d17e8aa">MyGLWidget::nrKlienta</a></div><div class="ttdeci">int nrKlienta</div><div class="ttdef"><b>Definition:</b> myglwidget.h:45</div></div>
+<div class="ttc" id="classMyGLWidget_html_a2b3f2523eae378b2a4a5f66bd176be57"><div class="ttname"><a href="classMyGLWidget.html#a2b3f2523eae378b2a4a5f66bd176be57">MyGLWidget::MyGLWidget</a></div><div class="ttdeci">MyGLWidget(QWidget *parent=0)</div><div class="ttdef"><b>Definition:</b> myglwidget.cpp:9</div></div>
+<div class="ttc" id="classMyGLWidget_html_a3cecbb2f5658f148e6e5d8ef3a3cc5e5"><div class="ttname"><a href="classMyGLWidget.html#a3cecbb2f5658f148e6e5d8ef3a3cc5e5">MyGLWidget::zmienOrtho</a></div><div class="ttdeci">void zmienOrtho(int)</div><div class="ttdef"><b>Definition:</b> myglwidget.cpp:174</div></div>
+<div class="ttc" id="classMyGLWidget_html_a8d0f06e3361addec1ba11fe317de2c60"><div class="ttname"><a href="classMyGLWidget.html#a8d0f06e3361addec1ba11fe317de2c60">MyGLWidget::tlo</a></div><div class="ttdeci">GLfloat tlo[4]</div><div class="ttdef"><b>Definition:</b> myglwidget.h:39</div></div>
+<div class="ttc" id="classMyGLWidget_html_a802184e7a48ae2a79f3daf4519e4fc66"><div class="ttname"><a href="classMyGLWidget.html#a802184e7a48ae2a79f3daf4519e4fc66">MyGLWidget::animacjaPrzyblizania</a></div><div class="ttdeci">void animacjaPrzyblizania()</div><div class="ttdef"><b>Definition:</b> myglwidget.cpp:136</div></div>
+<div class="ttc" id="classMyGLWidget_html_adca50638295dc5d284f4f042331e82a0"><div class="ttname"><a href="classMyGLWidget.html#adca50638295dc5d284f4f042331e82a0">MyGLWidget::resizeGL</a></div><div class="ttdeci">void resizeGL(int w, int h)</div><div class="ttdef"><b>Definition:</b> myglwidget.cpp:35</div></div>
+<div class="ttc" id="classMyGLWidget_html"><div class="ttname"><a href="classMyGLWidget.html">MyGLWidget</a></div><div class="ttdef"><b>Definition:</b> myglwidget.h:14</div></div>
+<div class="ttc" id="classMyGLWidget_html_af0ec25e9dee6351a690c26a392cde121"><div class="ttname"><a href="classMyGLWidget.html#af0ec25e9dee6351a690c26a392cde121">MyGLWidget::przeslijFigury</a></div><div class="ttdeci">void przeslijFigury(QList&lt; Figura * &gt; &amp;)</div><div class="ttdef"><b>Definition:</b> myglwidget.cpp:155</div></div>
+<div class="ttc" id="classMyGLWidget_html_aefac459d382b61ea5589ff6269ecdf73"><div class="ttname"><a href="classMyGLWidget.html#aefac459d382b61ea5589ff6269ecdf73">MyGLWidget::~MyGLWidget</a></div><div class="ttdeci">virtual ~MyGLWidget()</div><div class="ttdef"><b>Definition:</b> myglwidget.cpp:20</div></div>
+<div class="ttc" id="GraFigury_2kolo_8h_html"><div class="ttname"><a href="GraFigury_2kolo_8h.html">kolo.h</a></div></div>
+<div class="ttc" id="classMyGLWidget_html_abaf64d08c7bac0df986839ac063b02c2"><div class="ttname"><a href="classMyGLWidget.html#abaf64d08c7bac0df986839ac063b02c2">MyGLWidget::listaFigur</a></div><div class="ttdeci">QList&lt; Figura * &gt; listaFigur</div><div class="ttdef"><b>Definition:</b> myglwidget.h:40</div></div>
+<div class="ttc" id="GraFigury_2poziomy_8h_html"><div class="ttname"><a href="GraFigury_2poziomy_8h.html">poziomy.h</a></div></div>
+<div class="ttc" id="GraFigury_2odcinek_8h_html"><div class="ttname"><a href="GraFigury_2odcinek_8h.html">odcinek.h</a></div></div>
+<div class="ttc" id="classMyGLWidget_html_a349b4124c85266bef75a190246dca82ead114f07fe7235d3994ecc8e8270ffbdf"><div class="ttname"><a href="classMyGLWidget.html#a349b4124c85266bef75a190246dca82ead114f07fe7235d3994ecc8e8270ffbdf">MyGLWidget::TROJKAT</a></div><div class="ttdef"><b>Definition:</b> myglwidget.h:18</div></div>
+<div class="ttc" id="GraFigury_2trojkat_8h_html"><div class="ttname"><a href="GraFigury_2trojkat_8h.html">trojkat.h</a></div></div>
+<div class="ttc" id="classMyGLWidget_html_a349b4124c85266bef75a190246dca82ea83219b17f1da7d6ff531f1f616f1f497"><div class="ttname"><a href="classMyGLWidget.html#a349b4124c85266bef75a190246dca82ea83219b17f1da7d6ff531f1f616f1f497">MyGLWidget::KWADRAT</a></div><div class="ttdef"><b>Definition:</b> myglwidget.h:18</div></div>
+<div class="ttc" id="classMyGLWidget_html_a23624367d20ad8ca6a09f283ccb92c31"><div class="ttname"><a href="classMyGLWidget.html#a23624367d20ad8ca6a09f283ccb92c31">MyGLWidget::przeslijInfo</a></div><div class="ttdeci">void przeslijInfo(QList&lt; Odcinek * &gt; &amp;, int ramkaPrzyblizania, int)</div><div class="ttdef"><b>Definition:</b> myglwidget.cpp:165</div></div>
+<div class="ttc" id="classMyGLWidget_html_ab3fcfaa0bcedb9ee1b56fdacf58499ba"><div class="ttname"><a href="classMyGLWidget.html#ab3fcfaa0bcedb9ee1b56fdacf58499ba">MyGLWidget::aktualnyPoziom</a></div><div class="ttdeci">int aktualnyPoziom</div><div class="ttdef"><b>Definition:</b> myglwidget.h:44</div></div>
+<div class="ttc" id="classMyGLWidget_html_a98f0ba932652fe25ae3a469a9b6ee7e5"><div class="ttname"><a href="classMyGLWidget.html#a98f0ba932652fe25ae3a469a9b6ee7e5">MyGLWidget::mousePressEvent</a></div><div class="ttdeci">void mousePressEvent(QMouseEvent *)</div><div class="ttdef"><b>Definition:</b> myglwidget.cpp:103</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano Pt, 13 cze 2014 20:42:05 dla Gra programem &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

@@ -1,0 +1,377 @@
+\hypertarget{classMainWindow}{\section{Dokumentacja klasy Main\-Window}
+\label{classMainWindow}\index{Main\-Window@{Main\-Window}}
+}
+
+
+{\ttfamily \#include $<$mainwindow.\-h$>$}
+
+Diagram dziedziczenia dla Main\-Window\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMainWindow}
+\end{center}
+\end{figure}
+\subsection*{Typy publiczne}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{classMainWindow_ac0baac8464ccf6e6ea7e8f21f18484ffa67c2ad1aed243f6be7a551108477d9e0}{F\-I\-G\-U\-R\-Y}, 
+\hyperlink{classMainWindow_ac0baac8464ccf6e6ea7e8f21f18484ffa642a5a52542d22e67554f60eda6e541d}{I\-N\-F\-O}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Sygnały}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMainWindow_a5375b14904048c4f5c258183999afbf3}{usun\-Figury\-Signal} ()
+\end{DoxyCompactItemize}
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMainWindow_a8b244be8b7b7db1b08de2a2acb9409db}{Main\-Window} (Q\-Widget $\ast$parent=0)
+\item 
+\hyperlink{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\-Main\-Window} ()
+\item 
+\hyperlink{classMainWindow_a8b244be8b7b7db1b08de2a2acb9409db}{Main\-Window} (Q\-Widget $\ast$parent=0)
+\item 
+\hyperlink{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\-Main\-Window} ()
+\end{DoxyCompactItemize}
+\subsection*{Sloty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMainWindow_aeef45c5364f5d7843a260b01cf94f22e}{connect\-To\-Server} (Q\-String, int)
+\item 
+void \hyperlink{classMainWindow_ae426c78e710d74fa6cc67b0d73ade293}{new\-Message} ()
+\item 
+void \hyperlink{classMainWindow_a2d0da471c4fe51fc90f1079d856db068}{on\-\_\-push\-Button\-Polacz\-\_\-clicked} ()
+\item 
+void \hyperlink{classMainWindow_a6b8e934fca603cf7678eabb9a6dfc709}{key\-Press\-Event} (Q\-Key\-Event $\ast$)
+\item 
+void \hyperlink{classMainWindow_a47b54ea4678d72f712370f550634dfac}{zmien\-Poziom\-Message} ()
+\item 
+void \hyperlink{classMainWindow_a9abc4d8b5fac6ef7ad91ccd1181b21a8}{open\-Session} ()
+\item 
+void \hyperlink{classMainWindow_ade49de88616301ebc06e28993164a183}{new\-Connection} ()
+\item 
+void \hyperlink{classMainWindow_ae426c78e710d74fa6cc67b0d73ade293}{new\-Message} ()
+\item 
+void \hyperlink{classMainWindow_aef52274d67fbe13062dafd43e27529cb}{on\-\_\-timer} ()
+\item 
+void \hyperlink{classMainWindow_aa4f477acccb935dc77109944c036c66e}{client\-Disconnected} ()
+\item 
+void \hyperlink{classMainWindow_a7a57f41cd36b4221181dc661a69954bf}{on\-\_\-push\-Button\-Start\-\_\-clicked} ()
+\item 
+void \hyperlink{classMainWindow_a95ec84452d77bf97d2a16f3d9c6ea8b8}{on\-\_\-push\-Button\-Stop\-\_\-clicked} ()
+\end{DoxyCompactItemize}
+\subsection*{Metody prywatne}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMainWindow_a2d51371a2ba5783e209e4973d66968a9}{zmien\-Poziom} (int i)
+\item 
+void \hyperlink{classMainWindow_a28c4dda2a0ac0872677bcd088ec10258}{koniec\-Poziomu} (int)
+\item 
+void \hyperlink{classMainWindow_a817826befb881a9136a1d76dc64f8a67}{ruch\-Odrzutowy} (int, int)
+\item 
+void \hyperlink{classMainWindow_a8217ee19e4707d2ceea1ca62521806b7}{ruch\-Figur} ()
+\item 
+void \hyperlink{classMainWindow_a6c5e5435014fa2b8b1a30e3d5375f6af}{zjadanie\-Mniejszych} ()
+\item 
+void \hyperlink{classMainWindow_a3cf5b16f1c7da3d94cfb61fb8925871e}{usun\-Odicnki} ()
+\item 
+void \hyperlink{classMainWindow_af892d930f6529eb2831d5b05634a1dab}{usun\-Figury} ()
+\end{DoxyCompactItemize}
+\subsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+Q\-List$<$ \hyperlink{classFigura}{Figura} $\ast$ $>$ \hyperlink{classMainWindow_a8a91987c12db69417cdb275cf712b9df}{lista\-Figur}
+\item 
+Q\-List$<$ \hyperlink{classOdcinek}{Odcinek} $\ast$ $>$ \hyperlink{classMainWindow_abaa648f21383f580a833d7ed90f75926}{lista\-Odcinkow}
+\item 
+\hyperlink{classUi_1_1MainWindow}{Ui\-::\-Main\-Window} $\ast$ \hyperlink{classMainWindow_a43606649aeaf9e561328935fca0cd1bf}{ui}
+\item 
+Q\-Tcp\-Socket $\ast$ \hyperlink{classMainWindow_af85cfe62c116f8d2f2021e5411b0356e}{socket}
+\item 
+\hyperlink{classDialog}{Dialog} $\ast$ \hyperlink{classMainWindow_a029f5f35facf7120bbf42e54dbd25a40}{dialog}
+\item 
+\hyperlink{classDialog2}{Dialog2} $\ast$ \hyperlink{classMainWindow_acca874ff840ec87fe90e0acc72d40e5a}{dialog2}
+\item 
+int \hyperlink{classMainWindow_a2b0740aaca0b5b566008e55916d4d0e9}{wynik}
+\item 
+Q\-Tcp\-Server $\ast$ \hyperlink{classMainWindow_a4b1e890b4b33f6ff8c22621d2ce55c2d}{server}
+\item 
+Q\-Network\-Session $\ast$ \hyperlink{classMainWindow_a638a10aec0de799787205387ee4da83e}{network\-Session}
+\item 
+Q\-List$<$ Q\-Tcp\-Socket $\ast$ $>$ \hyperlink{classMainWindow_a698f52eb8759a1cde60c5638670b078e}{clients}
+\item 
+int \hyperlink{classMainWindow_a0909fe6df1d60edacad5591acb011a2f}{ramka\-Przyblizania}
+\item 
+G\-Lfloat \hyperlink{classMainWindow_a8e9fb49dd7c36fac9e2d83b555e0caa6}{tlo} \mbox{[}4\mbox{]}
+\item 
+\hyperlink{classPoziomy}{Poziomy} \hyperlink{classMainWindow_a6bc6d2f12427573392ddfbc8d7f454fd}{poziomy}
+\item 
+Q\-Point\-F \hyperlink{classMainWindow_a479094513b0598030f63a24963e2109e}{last\-Pos}
+\item 
+Q\-Timer \hyperlink{classMainWindow_a3c80cf51d9dfb16e655a7e25f8016e3b}{timer}
+\item 
+int \hyperlink{classMainWindow_a0fae41d96da5ca0d54f398025e19ec3a}{Ts}
+\item 
+int \hyperlink{classMainWindow_aeff57fcdb7d82d6f69b1214ce24d1ecd}{aktualny\-Poziom}
+\item 
+bool \hyperlink{classMainWindow_a331bf910d34ef19115989bba99c16b7b}{zmiana}
+\item 
+bool \hyperlink{classMainWindow_a071cbb3e764cd5a0d37033a5eb82b1e0}{wyslano\-Koniec\-Poziomu}
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja składowych wyliczanych}
+\hypertarget{classMainWindow_ac0baac8464ccf6e6ea7e8f21f18484ff}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{classMainWindow_ac0baac8464ccf6e6ea7e8f21f18484ff}
+\begin{Desc}
+\item[Wartości wyliczeń]\par
+\begin{description}
+\index{F\-I\-G\-U\-R\-Y@{F\-I\-G\-U\-R\-Y}!Main\-Window@{Main\-Window}}\index{Main\-Window@{Main\-Window}!F\-I\-G\-U\-R\-Y@{F\-I\-G\-U\-R\-Y}}\item[{\em 
+\hypertarget{classMainWindow_ac0baac8464ccf6e6ea7e8f21f18484ffa67c2ad1aed243f6be7a551108477d9e0}{F\-I\-G\-U\-R\-Y}\label{classMainWindow_ac0baac8464ccf6e6ea7e8f21f18484ffa67c2ad1aed243f6be7a551108477d9e0}
+}]\index{I\-N\-F\-O@{I\-N\-F\-O}!Main\-Window@{Main\-Window}}\index{Main\-Window@{Main\-Window}!I\-N\-F\-O@{I\-N\-F\-O}}\item[{\em 
+\hypertarget{classMainWindow_ac0baac8464ccf6e6ea7e8f21f18484ffa642a5a52542d22e67554f60eda6e541d}{I\-N\-F\-O}\label{classMainWindow_ac0baac8464ccf6e6ea7e8f21f18484ffa642a5a52542d22e67554f60eda6e541d}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{classMainWindow_a8b244be8b7b7db1b08de2a2acb9409db}{\index{Main\-Window@{Main\-Window}!Main\-Window@{Main\-Window}}
+\index{Main\-Window@{Main\-Window}!MainWindow@{Main\-Window}}
+\subsubsection[{Main\-Window}]{\setlength{\rightskip}{0pt plus 5cm}Main\-Window\-::\-Main\-Window (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classMainWindow_a8b244be8b7b7db1b08de2a2acb9409db}
+\hypertarget{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{\index{Main\-Window@{Main\-Window}!$\sim$\-Main\-Window@{$\sim$\-Main\-Window}}
+\index{$\sim$\-Main\-Window@{$\sim$\-Main\-Window}!MainWindow@{Main\-Window}}
+\subsubsection[{$\sim$\-Main\-Window}]{\setlength{\rightskip}{0pt plus 5cm}Main\-Window\-::$\sim$\-Main\-Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}
+\hypertarget{classMainWindow_a8b244be8b7b7db1b08de2a2acb9409db}{\index{Main\-Window@{Main\-Window}!Main\-Window@{Main\-Window}}
+\index{Main\-Window@{Main\-Window}!MainWindow@{Main\-Window}}
+\subsubsection[{Main\-Window}]{\setlength{\rightskip}{0pt plus 5cm}Main\-Window\-::\-Main\-Window (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classMainWindow_a8b244be8b7b7db1b08de2a2acb9409db}
+\hypertarget{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{\index{Main\-Window@{Main\-Window}!$\sim$\-Main\-Window@{$\sim$\-Main\-Window}}
+\index{$\sim$\-Main\-Window@{$\sim$\-Main\-Window}!MainWindow@{Main\-Window}}
+\subsubsection[{$\sim$\-Main\-Window}]{\setlength{\rightskip}{0pt plus 5cm}Main\-Window\-::$\sim$\-Main\-Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}
+
+
+\subsection{Dokumentacja funkcji składowych}
+\hypertarget{classMainWindow_aa4f477acccb935dc77109944c036c66e}{\index{Main\-Window@{Main\-Window}!client\-Disconnected@{client\-Disconnected}}
+\index{client\-Disconnected@{client\-Disconnected}!MainWindow@{Main\-Window}}
+\subsubsection[{client\-Disconnected}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::client\-Disconnected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classMainWindow_aa4f477acccb935dc77109944c036c66e}
+\hypertarget{classMainWindow_aeef45c5364f5d7843a260b01cf94f22e}{\index{Main\-Window@{Main\-Window}!connect\-To\-Server@{connect\-To\-Server}}
+\index{connect\-To\-Server@{connect\-To\-Server}!MainWindow@{Main\-Window}}
+\subsubsection[{connect\-To\-Server}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::connect\-To\-Server (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{ip, }
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classMainWindow_aeef45c5364f5d7843a260b01cf94f22e}
+\hypertarget{classMainWindow_a6b8e934fca603cf7678eabb9a6dfc709}{\index{Main\-Window@{Main\-Window}!key\-Press\-Event@{key\-Press\-Event}}
+\index{key\-Press\-Event@{key\-Press\-Event}!MainWindow@{Main\-Window}}
+\subsubsection[{key\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::key\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Key\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classMainWindow_a6b8e934fca603cf7678eabb9a6dfc709}
+\hypertarget{classMainWindow_a28c4dda2a0ac0872677bcd088ec10258}{\index{Main\-Window@{Main\-Window}!koniec\-Poziomu@{koniec\-Poziomu}}
+\index{koniec\-Poziomu@{koniec\-Poziomu}!MainWindow@{Main\-Window}}
+\subsubsection[{koniec\-Poziomu}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::koniec\-Poziomu (
+\begin{DoxyParamCaption}
+\item[{int}]{gracz\-Aktywny}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_a28c4dda2a0ac0872677bcd088ec10258}
+\hypertarget{classMainWindow_ade49de88616301ebc06e28993164a183}{\index{Main\-Window@{Main\-Window}!new\-Connection@{new\-Connection}}
+\index{new\-Connection@{new\-Connection}!MainWindow@{Main\-Window}}
+\subsubsection[{new\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::new\-Connection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classMainWindow_ade49de88616301ebc06e28993164a183}
+\hypertarget{classMainWindow_ae426c78e710d74fa6cc67b0d73ade293}{\index{Main\-Window@{Main\-Window}!new\-Message@{new\-Message}}
+\index{new\-Message@{new\-Message}!MainWindow@{Main\-Window}}
+\subsubsection[{new\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::new\-Message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classMainWindow_ae426c78e710d74fa6cc67b0d73ade293}
+\hypertarget{classMainWindow_ae426c78e710d74fa6cc67b0d73ade293}{\index{Main\-Window@{Main\-Window}!new\-Message@{new\-Message}}
+\index{new\-Message@{new\-Message}!MainWindow@{Main\-Window}}
+\subsubsection[{new\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::new\-Message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classMainWindow_ae426c78e710d74fa6cc67b0d73ade293}
+\hypertarget{classMainWindow_a2d0da471c4fe51fc90f1079d856db068}{\index{Main\-Window@{Main\-Window}!on\-\_\-push\-Button\-Polacz\-\_\-clicked@{on\-\_\-push\-Button\-Polacz\-\_\-clicked}}
+\index{on\-\_\-push\-Button\-Polacz\-\_\-clicked@{on\-\_\-push\-Button\-Polacz\-\_\-clicked}!MainWindow@{Main\-Window}}
+\subsubsection[{on\-\_\-push\-Button\-Polacz\-\_\-clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::on\-\_\-push\-Button\-Polacz\-\_\-clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classMainWindow_a2d0da471c4fe51fc90f1079d856db068}
+\hypertarget{classMainWindow_a7a57f41cd36b4221181dc661a69954bf}{\index{Main\-Window@{Main\-Window}!on\-\_\-push\-Button\-Start\-\_\-clicked@{on\-\_\-push\-Button\-Start\-\_\-clicked}}
+\index{on\-\_\-push\-Button\-Start\-\_\-clicked@{on\-\_\-push\-Button\-Start\-\_\-clicked}!MainWindow@{Main\-Window}}
+\subsubsection[{on\-\_\-push\-Button\-Start\-\_\-clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::on\-\_\-push\-Button\-Start\-\_\-clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classMainWindow_a7a57f41cd36b4221181dc661a69954bf}
+\hypertarget{classMainWindow_a95ec84452d77bf97d2a16f3d9c6ea8b8}{\index{Main\-Window@{Main\-Window}!on\-\_\-push\-Button\-Stop\-\_\-clicked@{on\-\_\-push\-Button\-Stop\-\_\-clicked}}
+\index{on\-\_\-push\-Button\-Stop\-\_\-clicked@{on\-\_\-push\-Button\-Stop\-\_\-clicked}!MainWindow@{Main\-Window}}
+\subsubsection[{on\-\_\-push\-Button\-Stop\-\_\-clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::on\-\_\-push\-Button\-Stop\-\_\-clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classMainWindow_a95ec84452d77bf97d2a16f3d9c6ea8b8}
+\hypertarget{classMainWindow_aef52274d67fbe13062dafd43e27529cb}{\index{Main\-Window@{Main\-Window}!on\-\_\-timer@{on\-\_\-timer}}
+\index{on\-\_\-timer@{on\-\_\-timer}!MainWindow@{Main\-Window}}
+\subsubsection[{on\-\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::on\-\_\-timer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classMainWindow_aef52274d67fbe13062dafd43e27529cb}
+\hypertarget{classMainWindow_a9abc4d8b5fac6ef7ad91ccd1181b21a8}{\index{Main\-Window@{Main\-Window}!open\-Session@{open\-Session}}
+\index{open\-Session@{open\-Session}!MainWindow@{Main\-Window}}
+\subsubsection[{open\-Session}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::open\-Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classMainWindow_a9abc4d8b5fac6ef7ad91ccd1181b21a8}
+\hypertarget{classMainWindow_a8217ee19e4707d2ceea1ca62521806b7}{\index{Main\-Window@{Main\-Window}!ruch\-Figur@{ruch\-Figur}}
+\index{ruch\-Figur@{ruch\-Figur}!MainWindow@{Main\-Window}}
+\subsubsection[{ruch\-Figur}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::ruch\-Figur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_a8217ee19e4707d2ceea1ca62521806b7}
+\hypertarget{classMainWindow_a817826befb881a9136a1d76dc64f8a67}{\index{Main\-Window@{Main\-Window}!ruch\-Odrzutowy@{ruch\-Odrzutowy}}
+\index{ruch\-Odrzutowy@{ruch\-Odrzutowy}!MainWindow@{Main\-Window}}
+\subsubsection[{ruch\-Odrzutowy}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::ruch\-Odrzutowy (
+\begin{DoxyParamCaption}
+\item[{int}]{key, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_a817826befb881a9136a1d76dc64f8a67}
+\hypertarget{classMainWindow_af892d930f6529eb2831d5b05634a1dab}{\index{Main\-Window@{Main\-Window}!usun\-Figury@{usun\-Figury}}
+\index{usun\-Figury@{usun\-Figury}!MainWindow@{Main\-Window}}
+\subsubsection[{usun\-Figury}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::usun\-Figury (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_af892d930f6529eb2831d5b05634a1dab}
+\hypertarget{classMainWindow_a5375b14904048c4f5c258183999afbf3}{\index{Main\-Window@{Main\-Window}!usun\-Figury\-Signal@{usun\-Figury\-Signal}}
+\index{usun\-Figury\-Signal@{usun\-Figury\-Signal}!MainWindow@{Main\-Window}}
+\subsubsection[{usun\-Figury\-Signal}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::usun\-Figury\-Signal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classMainWindow_a5375b14904048c4f5c258183999afbf3}
+\hypertarget{classMainWindow_a3cf5b16f1c7da3d94cfb61fb8925871e}{\index{Main\-Window@{Main\-Window}!usun\-Odicnki@{usun\-Odicnki}}
+\index{usun\-Odicnki@{usun\-Odicnki}!MainWindow@{Main\-Window}}
+\subsubsection[{usun\-Odicnki}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::usun\-Odicnki (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_a3cf5b16f1c7da3d94cfb61fb8925871e}
+\hypertarget{classMainWindow_a6c5e5435014fa2b8b1a30e3d5375f6af}{\index{Main\-Window@{Main\-Window}!zjadanie\-Mniejszych@{zjadanie\-Mniejszych}}
+\index{zjadanie\-Mniejszych@{zjadanie\-Mniejszych}!MainWindow@{Main\-Window}}
+\subsubsection[{zjadanie\-Mniejszych}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::zjadanie\-Mniejszych (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_a6c5e5435014fa2b8b1a30e3d5375f6af}
+\hypertarget{classMainWindow_a2d51371a2ba5783e209e4973d66968a9}{\index{Main\-Window@{Main\-Window}!zmien\-Poziom@{zmien\-Poziom}}
+\index{zmien\-Poziom@{zmien\-Poziom}!MainWindow@{Main\-Window}}
+\subsubsection[{zmien\-Poziom}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::zmien\-Poziom (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_a2d51371a2ba5783e209e4973d66968a9}
+\hypertarget{classMainWindow_a47b54ea4678d72f712370f550634dfac}{\index{Main\-Window@{Main\-Window}!zmien\-Poziom\-Message@{zmien\-Poziom\-Message}}
+\index{zmien\-Poziom\-Message@{zmien\-Poziom\-Message}!MainWindow@{Main\-Window}}
+\subsubsection[{zmien\-Poziom\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::zmien\-Poziom\-Message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{classMainWindow_a47b54ea4678d72f712370f550634dfac}
+
+
+\subsection{Dokumentacja atrybutów składowych}
+\hypertarget{classMainWindow_aeff57fcdb7d82d6f69b1214ce24d1ecd}{\index{Main\-Window@{Main\-Window}!aktualny\-Poziom@{aktualny\-Poziom}}
+\index{aktualny\-Poziom@{aktualny\-Poziom}!MainWindow@{Main\-Window}}
+\subsubsection[{aktualny\-Poziom}]{\setlength{\rightskip}{0pt plus 5cm}int Main\-Window\-::aktualny\-Poziom\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_aeff57fcdb7d82d6f69b1214ce24d1ecd}
+\hypertarget{classMainWindow_a698f52eb8759a1cde60c5638670b078e}{\index{Main\-Window@{Main\-Window}!clients@{clients}}
+\index{clients@{clients}!MainWindow@{Main\-Window}}
+\subsubsection[{clients}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$Q\-Tcp\-Socket$\ast$$>$ Main\-Window\-::clients\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_a698f52eb8759a1cde60c5638670b078e}
+\hypertarget{classMainWindow_a029f5f35facf7120bbf42e54dbd25a40}{\index{Main\-Window@{Main\-Window}!dialog@{dialog}}
+\index{dialog@{dialog}!MainWindow@{Main\-Window}}
+\subsubsection[{dialog}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dialog}$\ast$ Main\-Window\-::dialog\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_a029f5f35facf7120bbf42e54dbd25a40}
+\hypertarget{classMainWindow_acca874ff840ec87fe90e0acc72d40e5a}{\index{Main\-Window@{Main\-Window}!dialog2@{dialog2}}
+\index{dialog2@{dialog2}!MainWindow@{Main\-Window}}
+\subsubsection[{dialog2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dialog2}$\ast$ Main\-Window\-::dialog2\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_acca874ff840ec87fe90e0acc72d40e5a}
+\hypertarget{classMainWindow_a479094513b0598030f63a24963e2109e}{\index{Main\-Window@{Main\-Window}!last\-Pos@{last\-Pos}}
+\index{last\-Pos@{last\-Pos}!MainWindow@{Main\-Window}}
+\subsubsection[{last\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Point\-F Main\-Window\-::last\-Pos\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_a479094513b0598030f63a24963e2109e}
+\hypertarget{classMainWindow_a8a91987c12db69417cdb275cf712b9df}{\index{Main\-Window@{Main\-Window}!lista\-Figur@{lista\-Figur}}
+\index{lista\-Figur@{lista\-Figur}!MainWindow@{Main\-Window}}
+\subsubsection[{lista\-Figur}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ {\bf Figura} $\ast$ $>$ Main\-Window\-::lista\-Figur\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_a8a91987c12db69417cdb275cf712b9df}
+\hypertarget{classMainWindow_abaa648f21383f580a833d7ed90f75926}{\index{Main\-Window@{Main\-Window}!lista\-Odcinkow@{lista\-Odcinkow}}
+\index{lista\-Odcinkow@{lista\-Odcinkow}!MainWindow@{Main\-Window}}
+\subsubsection[{lista\-Odcinkow}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ {\bf Odcinek} $\ast$ $>$ Main\-Window\-::lista\-Odcinkow\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_abaa648f21383f580a833d7ed90f75926}
+\hypertarget{classMainWindow_a638a10aec0de799787205387ee4da83e}{\index{Main\-Window@{Main\-Window}!network\-Session@{network\-Session}}
+\index{network\-Session@{network\-Session}!MainWindow@{Main\-Window}}
+\subsubsection[{network\-Session}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Network\-Session$\ast$ Main\-Window\-::network\-Session\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_a638a10aec0de799787205387ee4da83e}
+\hypertarget{classMainWindow_a6bc6d2f12427573392ddfbc8d7f454fd}{\index{Main\-Window@{Main\-Window}!poziomy@{poziomy}}
+\index{poziomy@{poziomy}!MainWindow@{Main\-Window}}
+\subsubsection[{poziomy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Poziomy} Main\-Window\-::poziomy\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_a6bc6d2f12427573392ddfbc8d7f454fd}
+\hypertarget{classMainWindow_a0909fe6df1d60edacad5591acb011a2f}{\index{Main\-Window@{Main\-Window}!ramka\-Przyblizania@{ramka\-Przyblizania}}
+\index{ramka\-Przyblizania@{ramka\-Przyblizania}!MainWindow@{Main\-Window}}
+\subsubsection[{ramka\-Przyblizania}]{\setlength{\rightskip}{0pt plus 5cm}int Main\-Window\-::ramka\-Przyblizania\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_a0909fe6df1d60edacad5591acb011a2f}
+\hypertarget{classMainWindow_a4b1e890b4b33f6ff8c22621d2ce55c2d}{\index{Main\-Window@{Main\-Window}!server@{server}}
+\index{server@{server}!MainWindow@{Main\-Window}}
+\subsubsection[{server}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Tcp\-Server$\ast$ Main\-Window\-::server\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_a4b1e890b4b33f6ff8c22621d2ce55c2d}
+\hypertarget{classMainWindow_af85cfe62c116f8d2f2021e5411b0356e}{\index{Main\-Window@{Main\-Window}!socket@{socket}}
+\index{socket@{socket}!MainWindow@{Main\-Window}}
+\subsubsection[{socket}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Tcp\-Socket$\ast$ Main\-Window\-::socket\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_af85cfe62c116f8d2f2021e5411b0356e}
+\hypertarget{classMainWindow_a3c80cf51d9dfb16e655a7e25f8016e3b}{\index{Main\-Window@{Main\-Window}!timer@{timer}}
+\index{timer@{timer}!MainWindow@{Main\-Window}}
+\subsubsection[{timer}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Timer Main\-Window\-::timer\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_a3c80cf51d9dfb16e655a7e25f8016e3b}
+\hypertarget{classMainWindow_a8e9fb49dd7c36fac9e2d83b555e0caa6}{\index{Main\-Window@{Main\-Window}!tlo@{tlo}}
+\index{tlo@{tlo}!MainWindow@{Main\-Window}}
+\subsubsection[{tlo}]{\setlength{\rightskip}{0pt plus 5cm}G\-Lfloat Main\-Window\-::tlo\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_a8e9fb49dd7c36fac9e2d83b555e0caa6}
+\hypertarget{classMainWindow_a0fae41d96da5ca0d54f398025e19ec3a}{\index{Main\-Window@{Main\-Window}!Ts@{Ts}}
+\index{Ts@{Ts}!MainWindow@{Main\-Window}}
+\subsubsection[{Ts}]{\setlength{\rightskip}{0pt plus 5cm}int Main\-Window\-::\-Ts\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_a0fae41d96da5ca0d54f398025e19ec3a}
+\hypertarget{classMainWindow_a43606649aeaf9e561328935fca0cd1bf}{\index{Main\-Window@{Main\-Window}!ui@{ui}}
+\index{ui@{ui}!MainWindow@{Main\-Window}}
+\subsubsection[{ui}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ui\-::\-Main\-Window} $\ast$ Main\-Window\-::ui\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_a43606649aeaf9e561328935fca0cd1bf}
+\hypertarget{classMainWindow_a2b0740aaca0b5b566008e55916d4d0e9}{\index{Main\-Window@{Main\-Window}!wynik@{wynik}}
+\index{wynik@{wynik}!MainWindow@{Main\-Window}}
+\subsubsection[{wynik}]{\setlength{\rightskip}{0pt plus 5cm}int Main\-Window\-::wynik\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_a2b0740aaca0b5b566008e55916d4d0e9}
+\hypertarget{classMainWindow_a071cbb3e764cd5a0d37033a5eb82b1e0}{\index{Main\-Window@{Main\-Window}!wyslano\-Koniec\-Poziomu@{wyslano\-Koniec\-Poziomu}}
+\index{wyslano\-Koniec\-Poziomu@{wyslano\-Koniec\-Poziomu}!MainWindow@{Main\-Window}}
+\subsubsection[{wyslano\-Koniec\-Poziomu}]{\setlength{\rightskip}{0pt plus 5cm}bool Main\-Window\-::wyslano\-Koniec\-Poziomu\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_a071cbb3e764cd5a0d37033a5eb82b1e0}
+\hypertarget{classMainWindow_a331bf910d34ef19115989bba99c16b7b}{\index{Main\-Window@{Main\-Window}!zmiana@{zmiana}}
+\index{zmiana@{zmiana}!MainWindow@{Main\-Window}}
+\subsubsection[{zmiana}]{\setlength{\rightskip}{0pt plus 5cm}bool Main\-Window\-::zmiana\hspace{0.3cm}{\ttfamily [private]}}}\label{classMainWindow_a331bf910d34ef19115989bba99c16b7b}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\-:\begin{DoxyCompactItemize}
+\item 
+Gra\-Figury/\hyperlink{GraFigury_2mainwindow_8h}{mainwindow.\-h}\item 
+Gra\-Figury/\hyperlink{GraFigury_2mainwindow_8cpp}{mainwindow.\-cpp}\item 
+Serwer\-Figury/\hyperlink{SerwerFigury_2moc__mainwindow_8cpp}{moc\-\_\-mainwindow.\-cpp}\end{DoxyCompactItemize}
