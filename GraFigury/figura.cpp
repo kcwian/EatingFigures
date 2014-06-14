@@ -5,20 +5,13 @@
 #include <kwadrat.h>
 #include <trojkat.h>
 
-
 using namespace std;
 
-/*!
- * \brief Konstruktor domyślny
- *
- * Ustawia położenie figury w punkcie (0,0)
- */
 Figura::Figura()
 {
 
     x = 0;
     y = 0;
-
 }
 
 Figura::Figura(float x_, float y_)
@@ -29,11 +22,11 @@ Figura::Figura(float x_, float y_)
     kolor[1] = (float) (rand()%101)/100;
     kolor[2] = (float) (rand()%101)/100;
     kolor[3] =  1;
-    predkosc[0] = rand()%41-20;
-    predkosc[1] = rand()%41-20;
+    predkosc[0] = rand()%21-10;
+    predkosc[1] = rand()%21-10;
+
     omega = rand()%60-30;
     alpha = 0;
-    specjalny = 0;
 
 }
 
@@ -129,11 +122,6 @@ float Figura::zwrocAlpha()
     return alpha;
 }
 
-void Figura::ustawSpecjalnym(int typ)
-{
-    if(typ > 2 && typ < 10)
-    specjalny = typ;
-}
 
 
 QDataStream & operator <<(QDataStream &stream, Figura* figura)  // nie wysyla informacji o typie specjalnym
@@ -150,7 +138,6 @@ QDataStream & operator <<(QDataStream &stream, Figura* figura)  // nie wysyla in
     stream << figura->predkosc[1];
     stream << figura->alpha;
     stream << figura->omega;
-    stream << figura->specjalny;
     stream << figura->typ;
     return stream;
 }
@@ -169,7 +156,6 @@ QDataStream & operator >>(QDataStream &stream, Figura *figura)
     stream >> figura->predkosc[1];
     stream >> figura->alpha;
     stream >> figura->omega;
-    stream >> figura->specjalny;
     stream >> figura->typ;
     return stream;
 }
@@ -194,9 +180,9 @@ QDataStream & operator >>(QDataStream &stream, QList <Figura*> &listaFigur)
     Figura *figura;
     int typFigury;
 
-    for(int i=0; i<rozmiarListy; i++)
+    for(int i=0; i<rozmiarListy;i++)
     {
-        stream >> typFigury;
+         stream >> typFigury;
         switch(typFigury)
         {
         case Figura::KOLO:
@@ -218,8 +204,8 @@ QDataStream & operator >>(QDataStream &stream, QList <Figura*> &listaFigur)
 
 }
 
-
 void Figura::ustawRozmiar(float value)
 {
     r = value;
 }
+

@@ -27,7 +27,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(server,SIGNAL(newConnection()),this,SLOT(newConnection()));
 
-    Ts=30;
+    Ts=60;
     timer.setInterval(Ts);
     connect(&timer,SIGNAL(timeout()),this,SLOT(on_timer()));
 
@@ -155,6 +155,17 @@ void MainWindow::on_timer()
             data << listaFigur;
 
         }
+
+    }
+
+    // zmienianie fiugry na inną
+    static int cnt = 0;
+    cnt++;
+    if(cnt == 10)
+    {
+        cnt = 0;
+        int i = qrand()%(listaFigur.size()); // clientow nie zmienia
+        zmienFigure(listaFigur.at(i));
     }
 
 }
@@ -261,9 +272,11 @@ void MainWindow::zjadanieMniejszych()
         int jedynyAktywny = -1;
         int liczbaAktywnychGraczy = zwrocLiczbeAktywnychGraczy(jedynyAktywny);
 
-        if(jedynyAktywny !=-1 && listaFigur.at(jedynyAktywny)->zwrocPole() > sumaPol-listaFigur.at(jedynyAktywny)->zwrocPole())
+        if(jedynyAktywny !=-1)
         {
-            koniecPoziomu(jedynyAktywny);
+            float poleAktywnego = listaFigur.at(jedynyAktywny)->zwrocPole();
+            if(poleAktywnego > sumaPol - poleAktywnego)
+                koniecPoziomu(jedynyAktywny);
         }
         else if(liczbaAktywnychGraczy == 0)
         {
@@ -271,8 +284,6 @@ void MainWindow::zjadanieMniejszych()
         }
 
         // zrobić warunek konca poziomu - zjeść przeciwnika, czy wszystkich ?
-
-
 
     }
 }
@@ -473,3 +484,40 @@ int MainWindow::zwrocLiczbeAktywnychGraczy(int &jedynyAktywny)
     return liczbaAktywnychGraczy;
 }
 
+void MainWindow::zmienFigure(Figura* figura) // Kolo->Kwadrat->Trojkat
+{
+    int i = listaFigur.indexOf(figura);
+    if(i < clients.size() || i >= listaFigur.size())
+        return;
+    Figura *nowa = 0;
+
+    switch(figura->zwrocTyp())
+    {
+    case Figura::KOLO:
+    {
+        nowa = new Kwadrat(figura->zwrocPolozenieX(),figura->zwrocPolozenieY(),qSqrt(figura->zwrocPole()));
+        break;
+    }
+    case Figura::KWADRAT:
+    {
+        nowa = new Trojkat(figura->zwrocPolozenieX(),figura->zwrocPolozenieY(),0);
+        nowa->zmienPole(figura->zwrocPole());
+        break;
+
+    }
+    case Figura::TROJKAT:
+    {
+        nowa = new Kolo(figura->zwrocPolozenieX(),figura->zwrocPolozenieY(),0);
+        nowa->zmienPole(figura->zwrocPole());
+        break;
+    }
+
+    }
+    nowa->ustawPredkoscX(figura->zwrocPredkoscX());
+    nowa->ustawPredkoscY(figura->zwrocPredkoscY());
+    nowa->ustawOmega(figura->zwrocOmega());
+    //        nowa->ustawKolor(figura->zwr);
+    delete listaFigur.at(i);
+    listaFigur.replace(i,nowa);
+
+}

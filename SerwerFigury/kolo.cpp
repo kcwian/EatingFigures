@@ -84,7 +84,7 @@ void Kolo::zmienPole(float dp)
 {
     float pole = zwrocPole() + dp;
 
-    zmienRozmiar(sqrt(pole/3.14)-r);
+    zmienRozmiar(sqrt(pole/3.14)-r); // nowe r - stare r
 }
 
 int Kolo::zwrocTyp()

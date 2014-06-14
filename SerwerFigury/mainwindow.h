@@ -43,7 +43,9 @@ private:
     void zjadanieMniejszych();
     void usunOdicnki();
     void usunFigury();
+    void zmienFigure(Figura*);
     int zwrocLiczbeAktywnychGraczy(int &);
+
 
     Ui::MainWindow *ui;
     QTcpServer *server;

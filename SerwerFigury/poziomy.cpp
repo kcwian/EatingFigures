@@ -1,6 +1,7 @@
 #include <QGLWidget>
 #include <qmath.h>
 #include "poziomy.h"
+#include <QTextStream>
 Poziomy::Poziomy()
 {
 }
@@ -31,7 +32,6 @@ void Poziomy::inicjalizuj(int i,int &ramkaPrzyblizania,QList <Figura*> &list, QL
         {
             for (int i = -45; i<45;i+=20)
             {
-
                 nowa2 = new Kolo(i,j,3);
                 nowa2->ustawPredkoscX(3);
                 nowa2->ustawPredkoscY(3);

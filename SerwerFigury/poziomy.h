@@ -1,6 +1,6 @@
 #ifndef POZIOMY_H
 #define POZIOMY_H
-#include <figura.h>
+#include "figura.h"
 #include <kwadrat.h>
 #include <kolo.h>
 #include <trojkat.h>

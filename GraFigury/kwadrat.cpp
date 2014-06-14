@@ -14,7 +14,6 @@ Kwadrat::Kwadrat(float x_, float y_, float a_): Figura(x_,y_)
 {
     r = a_;
     typ = KWADRAT;
-    specjalny = 0;
 
 }
 
@@ -29,26 +28,6 @@ void Kwadrat::rysuj()
     glLoadIdentity();
     glTranslatef(x,y,0);
     glRotatef(alpha,0,0,1);
-
-    if (specjalny != 0)
-    {
-        glColor4f(0.3,0.2,0.4,1); // kolor tla
-        switch(specjalny)
-        {
-        case KWADRAT_KOLO:
-
-            break;
-
-        case KWADRAT_TROJKAT:
-            glBegin(GL_POLYGON);
-            glVertex2f(-r/4,-r/4);
-            glVertex2f(r/4,-r/4);
-            glVertex2f(0,r/4);
-            glEnd();
-            break;
-
-        }
-    }
     glBegin(GL_POLYGON);
     glColor4f(kolor[0],kolor[1],kolor[2],kolor[3]);
     glVertex2f(-r/2,-r/2);

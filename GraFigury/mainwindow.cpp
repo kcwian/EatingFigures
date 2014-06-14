@@ -104,7 +104,7 @@ void MainWindow::newMessage()
 
         }
 
-         //   socket->readAll(); // WAŻNEEEE: dzięki temu nie opoźnia się gra  ?????
+         // socket->readAll(); // WAŻNEEEE: dzięki temu nie opoźnia się gra  ?????
         }
     }
 

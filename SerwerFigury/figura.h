@@ -4,6 +4,9 @@
 #include <iostream>
 #include <QDataStream>
 
+/*! \file Gra/Gra/SerwerFigury/figura.h
+*/
+
 using namespace std;
 
 class Figura // Figury nie mają zmiennej Pole, jest ono wyliczane z rozmiaru
@@ -17,7 +20,7 @@ public:
     Figura();
     Figura(float x_, float y_); 
     virtual ~Figura();
-    enum {KOLO, KWADRAT, TROJKAT, KOLO_KWADRAT, KOLO_TROJKAT, KWADRAT_TROJKAT, KWADRAT_KOLO, TROJKAT_KOLO, TROJKAT_KWADRAT};
+    enum {KOLO, KWADRAT, TROJKAT};
     float odleglosc();
     float odleglosc(Figura *druga);
     float odleglosc(float, float);
@@ -33,7 +36,7 @@ public:
     float zwrocPolozenieX();
     float zwrocPolozenieY();
     float zwrocAlpha();
-    void ustawSpecjalnym(int);
+  //  void ustawSpecjalnym(int);
     void ustawRozmiar(float);
     virtual void rysuj() = 0;
     virtual bool czyNalezydoFigury(float x, float y) = 0; // do zmieniena na virtual i dokladniej
@@ -53,7 +56,6 @@ protected:
     float predkosc[2];
     float omega, alpha;
     int typ;
-    int specjalny;
 
 
 
