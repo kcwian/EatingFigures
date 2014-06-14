@@ -5,7 +5,7 @@
 #include <kolo.h>
 #include <trojkat.h>
 #include <QList>
-#include <odcinek.h>
+#include "odcinek.h"
 
 class Poziomy
 {

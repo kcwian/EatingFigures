@@ -9,9 +9,9 @@ class Dialog;
 }
 
 /*!
- * \brief Okno Dialogowe
+ * \brief Okno Dialogowe, służące do połączenia z serwerem.
  *
- * Umożliwia połączenie z serwerem
+ *
  */
 
 class Dialog : public QDialog

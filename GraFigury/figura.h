@@ -4,11 +4,10 @@
 #include <iostream>
 #include <QDataStream>
 
-/*! \file Gra/Gra/GraFigury/figura.h
-*/
-
 using namespace std;
-
+/*!
+ * \brief Klasa bazowa dla klas Kwadrat, Kolo, Trojkat.
+ */
 class Figura // Figury nie mają zmiennej Pole, jest ono wyliczane z rozmiaru
 {
 
@@ -38,7 +37,16 @@ public:
     float zwrocAlpha();
   //  void ustawSpecjalnym(int);
     void ustawRozmiar(float);
+    /*!
+     * \brief Służy do rysowania figur w OpenGL.
+     */
     virtual void rysuj() = 0;
+    /*!
+     * \brief S
+     * \param x
+     * \param y
+     * \return
+     */
     virtual bool czyNalezydoFigury(float x, float y) = 0; // do zmieniena na virtual i dokladniej
     virtual float zwrocRozmiar() = 0; // Rozmiar: Kolo-2*r, kwadrat - a, trojkat - a;
     virtual bool czyKolizja(Figura * druga) = 0; // zle

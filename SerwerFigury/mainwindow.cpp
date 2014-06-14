@@ -159,6 +159,8 @@ void MainWindow::on_timer()
     }
 
     // zmienianie fiugry na inną
+    if(aktualnyPoziom != 10)
+        return;
     static int cnt = 0;
     cnt++;
     if(cnt == 10)

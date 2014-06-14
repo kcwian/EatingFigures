@@ -54,6 +54,21 @@
          <string>Poziom 2</string>
         </property>
        </item>
+       <item>
+        <property name="text">
+         <string>Poziom 3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Poziom 4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Poziom 5</string>
+        </property>
+       </item>
       </widget>
      </item>
      <item>

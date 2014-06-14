@@ -4,8 +4,6 @@
 #include <iostream>
 #include <QDataStream>
 
-/*! \file Gra/Gra/SerwerFigury/figura.h
-*/
 
 using namespace std;
 
