@@ -45,53 +45,12 @@ float Kwadrat::zwrocRozmiar()
     return r;
 }
 
-bool Kwadrat::czyNalezydoFigury(float x_, float y_)
-{
-    float dx = (x_-x)*(x_-x);
-    float dy = (y_-y)*(y_-y);
-    return (sqrt(dx+dy) < r/2); // nie uwzglednia rogu kwadratu
-}
-
-//bool Kwadrat::czyKolizja(Figura *druga)
-//{
-//    if(druga->zwrocTyp() == KWADRAT)
-//    {
-//    return (odleglosc(druga) < a/2+druga->zwrocRozmiar()/2);
-//    }
-//  return false;
-
-//}
 
 bool Kwadrat::czyKolizja(Figura *druga)
 {
     if(druga->zwrocTyp() == KWADRAT)
     {
-
-        // Obliczanie wierzchołków
-        //                float delta = alpha - druga->zwrocAlpha();
-        //                while(delta > 90)
-        //                    delta -= 90;
-        //        float sinb = sin(beta), cosb = cos(beta);
-        //        QPointF wierzcholkiA[4];
-        //        wierzcholkiA[0].setX(-a*0.707*cosb);
-        //        wierzcholkiA[0].setY(-a*0.707*sinb);
-        //        wierzcholkiA[1].setX(a*0.707*sinb);
-        //        wierzcholkiA[1].setY(-a*0.707*cosb);
-        //        wierzcholkiA[2].setX(a*0.707*cosb);
-        //        wierzcholkiA[2].setY(a*0.707*sinb);
-        //        wierzcholkiA[3].setX(-a*0.707*sinb);
-        //        wierzcholkiA[3].setY(a*0.707*cosb);
-        //        if(delta> 22.5 && delta < 77.5)
-        //        {
-        //            return (odleglosc(druga) < (a+druga->zwrocRozmiar())*0.707);
-        //        }
-
-        //        else
-        //        {
-        // return(odleglosc(druga) < (a + druga->zwrocRozmiar()) * 0.707);
-      //  return (odleglosc(druga) < ((a+druga->zwrocRozmiar())*0.5)*(1 + 0.15)); // 0.15 -  korekta - jest ok
         return(odleglosc(druga) < (zwrocodlegloscDoKolizji() + druga->zwrocodlegloscDoKolizji()));
-        // }
     }
     return false;
 

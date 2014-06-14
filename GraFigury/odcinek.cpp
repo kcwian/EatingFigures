@@ -5,10 +5,6 @@
 #include <QPoint>
 
 
-Odcinek::Odcinek()
-{
-}
-
 Odcinek::Odcinek(GLfloat Ax_, GLfloat Ay_, GLfloat Bx_, GLfloat By_)
 {
     Ax = Ax_;
@@ -45,55 +41,15 @@ void Odcinek::czyKolizja(Figura* figura)
 
     //Sprawdzanie, czy moze dojsc do kolizji
     GLfloat p = qMin(Ax,Bx), r = qMax(Ax,Bx), s = qMin(Ay,By), t = qMax(Ay,By);
-    if((/*(alpha != 0) && (alpha != PI*0.5) &&*/ (xF + rF < p || xF - rF > r || yF+rF < s || yF-rF > t )))
+    if(((xF + rF < p || xF - rF > r || yF+rF < s || yF-rF > t )))
     {
         return;
     }
-//    if(alpha == 0)
-//    {
-//        if (xF+rF <= p || xF-rF >= r)
-//            return;
-//    }
-//    else if(alpha == PI*0.5)
-//    {
-//        // out2 << xF << " yF: " << yF;
-//        if (yF+rF < s || yF-rF > t)
-//            return;
-//    }
-    //rownanie prostej y = ax + b;
+
 
     GLdouble a = qTan(alpha);
     GLdouble b = By - a*Bx;
     bool kolizja = 0;
-
-
-    //        QPoint A,B; // mogą mieć kolizje
-
-    //        GLfloat roz = figura->zwrocRozmiar()*0.5;
-    //        static float k = 1; // ograniczanie ilosci odbic
-    //        {
-    //        A.setX(figura->zwrocPolozenieX()+ roz* qSin(-alpha));
-    //        A.setY(figura->zwrocPolozenieY()+roz* qCos(-alpha));
-    //        B.setX(figura->zwrocPolozenieX()+ roz* qSin(-alpha+PI));
-    //        B.setY(figura->zwrocPolozenieY()+roz* qCos(-alpha+PI));
-    //        if(!(A.x() > Ax && A.x() < Bx ))
-    //            break;
-
-
-    //        if(((qAbs(A.y() - a*A.x()-b) <k) ) || ((qAbs(B.y() - a*B.x()-b)) <k))
-    //        {
-    //            k=0; // następnego nie będzie
-    //             kolizja =1;
-    //             out2 << "a: " << a << " b " << b << endl;
-    //        }
-    //        else
-    //        {
-    //            k=1; // wraca do poprzedniej wartosci
-    //        }
-
-    //}
-
-    //    }
 
     if(alpha != PI*0.5 && alpha != -PI*0.5)
     {
@@ -115,22 +71,13 @@ void Odcinek::czyKolizja(Figura* figura)
             xPkt = figura->zwrocPolozenieX();
             yPkt = b;
         }
-        //        out2 << a2 << endl;
-        //        out2 << "x: " << xPkt << " y: " << yPkt << endl;
-        //        out2 << figura->odleglosc(xPkt,yPkt) << endl;
 
-
-        //            if(figura->odleglosc(xPkt,yPkt) < figura->zwrocRozmiar()*0.5)
-        //            {
-        //                kolizja = 1;
-        //            }
     }
     else
     {
         xPkt = Bx;
         yPkt = yF;
-        //            if(figura->odleglosc(Bx,figura->zwrocPolozenieY()) < figura->zwrocRozmiar()*0.5)
-        //                kolizja = 1;
+
     }
 
 
@@ -180,16 +127,11 @@ void Odcinek::czyKolizja(Figura* figura)
         else if(sinV <0 && cosV > 0) // IV ćwiartka
             beta = qAbs(qAtan(Vx/Vy))+1.5*PI;
 
-        //  GLfloat beta = qAtan(Vy/Vx) *180  / PI;
         GLfloat gamma = 2*(alpha-beta); // nowy kąt prędkości
         gamma += beta;
-        // gamma = -90 * PI/180;
         figura->ustawPredkoscX(modol*qCos(gamma));
         figura->ustawPredkoscY(modol*qSin(gamma));
         QTextStream out(stdout);
-
-//        out << "nachylenie prostej: " << alpha*180/PI << " kat predkosci:  " << beta*180/PI << " gamma:  " << gamma*180/PI << endl;
-//        out << "Vx:  " << Vx << "Vy: " << Vy << endl;
 
     }
 }
@@ -232,7 +174,7 @@ QDataStream & operator >>(QDataStream &stream, QList <Odcinek*> &listaOdcinkow)
 
     for(int i=0; i<rozmiarListy;i++)
     {
-       Odcinek *odcinek = new Odcinek;
+       Odcinek *odcinek = new Odcinek(1,2,3,4);
        stream >> odcinek;
        listaOdcinkow.append(odcinek);
     }

@@ -54,12 +54,6 @@ float Kolo::zwrocRozmiar()
     return 2*r;
 }
 
-bool Kolo::czyNalezydoFigury(float x_, float y_)
-{
-    float dx = (x_-x)*(x_-x);
-    float dy = (y_-y)*(y_-y);
-    return (sqrt(dx+dy) < r);
-}
 
 bool Kolo::czyKolizja(Figura *druga)
 {
@@ -84,7 +78,7 @@ void Kolo::zmienPole(float dp)
 {
     float pole = zwrocPole() + dp;
 
-    zmienRozmiar(sqrt(pole/3.14)-r); // nowe r - stare r
+    zmienRozmiar(sqrt(pole/3.14)-r);
 }
 
 int Kolo::zwrocTyp()
@@ -97,84 +91,3 @@ double Kolo::zwrocodlegloscDoKolizji()
     return r;
 }
 
-QDataStream & operator <<(QDataStream &stream, Kolo *kolo)
-{
-
-    stream << kolo->x;
-    stream << kolo->y;
-    stream << kolo->r;
-    stream << kolo->kolor[0];
-    stream << kolo->kolor[1];
-    stream << kolo->kolor[2];
-    stream << kolo->kolor[3];
-    stream << kolo->predkosc[0];
-    stream << kolo->predkosc[1];
-    stream << kolo->typ;
-    return stream;
-}
-
-QDataStream & operator >>(QDataStream &stream, Kolo *kolo)
-{
-
-    stream >> kolo->x;
-    stream >> kolo->y;
-    stream >> kolo->r;
-    stream >> kolo->kolor[0];
-    stream >> kolo->kolor[1];
-    stream >> kolo->kolor[2];
-    stream >> kolo->kolor[3];
-    stream >> kolo->predkosc[0];
-    stream >> kolo->predkosc[1];
-    stream >> kolo->typ;
-    return stream;
-}
-
-QDataStream & operator <<(QDataStream &stream, QList <Kolo*> &listaKol)
-{
-
-    stream << listaKol.size(); // Pierwszy element to dlugosc listy
-
-    for(int i=0; i<listaKol.size();i++)
-    {
-        Kolo *kolo = listaKol.at(i);
-        stream << kolo->x;
-        stream << kolo->y;
-        stream << kolo->r;
-        stream << kolo->kolor[0];
-        stream << kolo->kolor[1];
-        stream << kolo->kolor[2];
-        stream << kolo->kolor[3];
-        stream << kolo->predkosc[0];
-        stream << kolo->predkosc[1];
-        stream << kolo->typ;
-    }
-    return stream;
-}
-
-QDataStream & operator >>(QDataStream &stream, QList <Kolo*> &listaKol)
-{
-
-    int rozmiarListy;
-    stream >> rozmiarListy;
-    QTextStream out (stdout);
-    out << rozmiarListy;
-
-    for(int i=0; i<rozmiarListy;i++)
-    {
-        Kolo *kolo = new Kolo();
-
-        stream >> kolo->x;
-        stream >> kolo->y;
-        stream >> kolo->r;
-        stream >> kolo->kolor[0];
-        stream >> kolo->kolor[1];
-        stream >> kolo->kolor[2];
-        stream >> kolo->kolor[3];
-        stream >> kolo->predkosc[0];
-        stream >> kolo->predkosc[1];
-        stream >> kolo->typ;
-        listaKol.append(kolo);
-    }
-    return stream;
-
-}

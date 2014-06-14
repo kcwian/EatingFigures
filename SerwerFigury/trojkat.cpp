@@ -15,7 +15,6 @@ Trojkat::Trojkat(float x_, float y_, float a_)
 
 Trojkat::~Trojkat()
 {
-
 }
 
 void Trojkat::rysuj()
@@ -31,26 +30,9 @@ void Trojkat::rysuj()
     glEnd();
 }
 
-//double Trojkat::pole()
-//{
-//    double p = 0.5*(a+b+c);
-//    return sqrt(p*(p-a)*(p-b)*(p-c));
-//}
-
-//double Trojkat::obwod()
-//{
-//    return a+b+c;
-//}
 float Trojkat::zwrocRozmiar()
 {
     return r;
-}
-
-bool Trojkat::czyNalezydoFigury(float x_, float y_)
-{
-    float dx = (x_-x)*(x_-x);
-    float dy = (y_-y)*(y_-y);
-    return (sqrt(dx+dy) < r*1.73/6);
 }
 
 bool Trojkat::czyKolizja(Figura *druga)

@@ -1524,7 +1524,8 @@ poziomy.o: poziomy.cpp /usr/include/qt5/QtOpenGL/QGLWidget \
 		kolo.h \
 		trojkat.h \
 		/usr/include/qt5/QtCore/QList \
-		odcinek.h
+		odcinek.h \
+		/usr/include/qt5/QtCore/QTextStream
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o poziomy.o poziomy.cpp
 
 odcinek.o: odcinek.cpp odcinek.h \
@@ -1651,9 +1652,6 @@ odcinek.o: odcinek.cpp odcinek.h \
 		/usr/include/qt5/QtGui/qsurfaceformat.h \
 		figura.h \
 		/usr/include/qt5/QtCore/QDataStream \
-		kolo.h \
-		kwadrat.h \
-		trojkat.h \
 		/usr/include/qt5/QtCore/qmath.h \
 		/usr/include/qt5/QtCore/QTextStream \
 		/usr/include/qt5/QtCore/QPoint

@@ -6,9 +6,9 @@
 
 using namespace std;
 /*!
- * \brief Klasa bazowa dla klas Kwadrat, Kolo, Trojkat.
+ * \brief Klasa bazowa dla klas: Kwadrat, Kolo, Trojkat.
  */
-class Figura // Figury nie mają zmiennej Pole, jest ono wyliczane z rozmiaru
+class Figura
 {
 
     friend QDataStream & operator <<(QDataStream &stream, Figura *figura);
@@ -23,47 +23,84 @@ public:
     float odleglosc();
     float odleglosc(Figura *druga);
     float odleglosc(float, float);
-    void ustawKolor(float red, float green, float blue, float alpha);
-    void ustawPredkoscX(float vx);
-    void ustawPredkoscY(float vy);
-    void ustawOmega(float v);
+    void ustawRozmiar(float);
     float zwrocPredkoscX();
     float zwrocPredkoscY();
-    float zwrocOmega();
+    void ustawPredkoscX(float vx);
+    void ustawPredkoscY(float vy); 
     void zmienPolozenie(float dx, float dy);
-    void zmienAlpha(float da);
     float zwrocPolozenieX();
-    float zwrocPolozenieY();
+    float zwrocPolozenieY();   
+    void ustawOmega(float v);
+     float zwrocOmega();
+    void zmienAlpha(float da);
     float zwrocAlpha();
-  //  void ustawSpecjalnym(int);
-    void ustawRozmiar(float);
+     void ustawKolor(float red, float green, float blue, float alpha);
     /*!
      * \brief Służy do rysowania figur w OpenGL.
      */
     virtual void rysuj() = 0;
     /*!
-     * \brief S
-     * \param x
-     * \param y
-     * \return
+     * \brief
+     *
+     * Kolo - promień.
+     * Kwadrat - długość boku.
+     * Trojkat - długość boku.
+     * \return rozmiar figury.
      */
-    virtual bool czyNalezydoFigury(float x, float y) = 0; // do zmieniena na virtual i dokladniej
     virtual float zwrocRozmiar() = 0; // Rozmiar: Kolo-2*r, kwadrat - a, trojkat - a;
-    virtual bool czyKolizja(Figura * druga) = 0; // zle
+
+    /*!
+     * \brief Sprawdza czy nastąpiła kolizja dwóch figur.
+     * \param druga Figura, z którą sprawdzana jest kolizja.
+     * \return prawdę, gdy wystąpiła kolizja
+     */
+    virtual bool czyKolizja(Figura * druga) = 0;
+
+    /*!
+     * \brief
+     * \return promień kolizji figury.
+     *
+     * Promień kolizji:
+     * Koło - promień.
+     * Kwadrat - średnia z długości połowy przekątnej oraz połowy boku.
+     * Trojkat - połowa wysokości.
+     */
     virtual double zwrocodlegloscDoKolizji() = 0;
+
+    /*!
+     * \brief Zmienia rozmiar figury.
+     */
     virtual void zmienRozmiar(float) = 0;
+
+    /*!
+     * \brief
+     * \return pole figury.
+     */
     virtual float zwrocPole()=0;
+
+    /*!
+     * \brief Służy do zmiany pola figury. Jednocześnie oblicza nowy rozmiar.
+     */
     virtual void zmienPole(float) = 0;
+
+    /*!
+     * \brief
+     * \return informację, czy dana figura to Kolo, Kwadrat czy Trojkat.
+     */
     virtual int zwrocTyp()=0;
   //  virtual float
 
 protected:
-    float x,y;
-    float r; // bok kwadratu, bok trojkata, promien okręgu
-    float kolor[4];
-    float predkosc[2];
-    float omega, alpha;
-    int typ;
+
+    float x; //!< Współrzędna X położenia środka figury.
+    float y; //!< Współrzędna Y położenia środka figury.
+    float r; //!< Rozmiar figury.
+    float kolor[4]; //!< Rozmiar figury.
+    float predkosc[2]; //!< Rozmiar figury.
+    float omega;//!< Prędkość kątowa figury.
+    float alpha; //!< Aktualny kąt obrotu figury.
+    int typ; //!< Typ figury.
 
 
 

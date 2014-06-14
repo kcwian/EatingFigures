@@ -166,7 +166,7 @@ void MainWindow::on_timer()
     if(cnt == 10)
     {
         cnt = 0;
-        int i = qrand()%(listaFigur.size()); // clientow nie zmienia
+        int i = qrand()%(listaFigur.size()); // klientow nie zmienia
         zmienFigure(listaFigur.at(i));
     }
 
@@ -235,25 +235,14 @@ void MainWindow::zjadanieMniejszych()
             k++;
 
         }
-        // jeśli Cię zjadło
 
-        //        if (listaFigur.at(0)->zwrocRozmiar() < 0.5)
-        //        {
-        //            listaFigur.clear();
-        //            usunFigurySlot();
-        //            sterowana = new Kwadrat(-30,20,10);
-        //            listaFigur.append(sterowana);
-
-        //        }
-
-        //osobna petla do usuwania
         float sumaPol = 0;
         for (int i=0; i < listaFigur.length(); i++)
         {
 
             Figura *tmp = listaFigur.at(i);
             sumaPol += tmp->zwrocPole();
-            if (tmp->zwrocPole() <= 0.25) // rozmiar, czy pole?
+            if (tmp->zwrocPole() <= 0.5) // rozmiar, czy pole?
             {
 
                 if(i<clients.size())
@@ -473,7 +462,7 @@ int MainWindow::zwrocLiczbeAktywnychGraczy(int &jedynyAktywny)
     int tmp = 0, liczbaAktywnychGraczy = 0;
     for(int i=0;i < clients.size();i++)
     {
-        if(listaFigur.at(i)->zwrocPole()>0.25)
+        if(listaFigur.at(i)->zwrocPole()>0.5)
         {
             liczbaAktywnychGraczy++;
             tmp = i;

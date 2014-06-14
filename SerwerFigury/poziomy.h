@@ -11,9 +11,12 @@ class Poziomy
 {
 public:
     Poziomy();
-    enum {KOLO, KWADRAT, TROJKAT, KOLO_KWADRAT, KOLO_TROJKAT, KWADRAT_TROJKAT, KWADRAT_KOLO, TROJKAT_KOLO, TROJKAT_KWADRAT};
-    void inicjalizuj(int,int&,QList <Figura*> &, QList <Odcinek*> &, int);
-    void rysuj(int);
+    enum {KOLO, KWADRAT, TROJKAT};//!< Typ wyliczeniowy, służący do identyfikacjy każdej figury.
+
+    /*!
+     * \brief Inicjalizuje poziom, tworząc listę figur, listę odcinków (przekazanych przez referencję) oraz ustala rozmiar ramki.
+     */
+    void inicjalizuj(int nrKlienta ,int& ramka ,QList <Figura*> &, QList <Odcinek*> &, int liczbaKlientow);
 
 };
 

@@ -14,7 +14,7 @@ MyGLWidget::MyGLWidget(QWidget *parent) :
     tlo[2] = 0.4;
     tlo[3] = 1;
     sterowana = 0 ;
-    wartoscOrtho = 500;
+    wartoscOrtho = 52;
 }
 
 MyGLWidget::~MyGLWidget()
@@ -28,7 +28,7 @@ MyGLWidget::~MyGLWidget()
 
 void MyGLWidget::initializeGL()
 {
-    glEnable(GL_DEPTH_TEST);                                            // obiekty w głębi się przysłaniają
+    glEnable(GL_DEPTH_TEST);     //!< Ustawia glębię.
 
 }
 
@@ -38,13 +38,7 @@ void MyGLWidget::resizeGL(int w, int h)
     glViewport((w-s)/2, (h-s)/2, s, s);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-//    if(sterowana !=0 && (sterowana->zwrocRozmiar() == 0))
-//    {
-//         int a = 1.5*ramkaPrzyblizania;
-//         glOrtho(-a,a,-a,a, -1 ,1 );
-
-//    }
-  /*  else*/ if(wartoscOrtho <= ramkaPrzyblizania && sterowana != 0)
+    if(wartoscOrtho <= ramkaPrzyblizania && sterowana != 0)
     {
         float x = sterowana->zwrocPolozenieX(), y = sterowana->zwrocPolozenieY();
         glOrtho(-wartoscOrtho+x, wartoscOrtho+x, -wartoscOrtho+y, wartoscOrtho+y, -1 ,1 );
@@ -62,7 +56,6 @@ void MyGLWidget::resizeGL(int w, int h)
 
 void MyGLWidget::paintGL()
 {
-    animacjaPrzyblizania();
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glClearColor(tlo[0],tlo[1],tlo[2],tlo[3]);
 
@@ -95,60 +88,6 @@ void MyGLWidget::paintGL()
 
 }
 
-//void MyGLWidget::keyPressEvent(QKeyEvent *event)
-//{
-//}
-
-void MyGLWidget::mousePressEvent(QMouseEvent *event)
-{
-    QTextStream out(stdout);
-    float h = (float) height()/(wartoscOrtho*2);
-    float w = (float) width()/(wartoscOrtho*2);
-    lastPos.setX(event->pos().x()/h-wartoscOrtho); // -wartoscOrtho, bo uklad wspolrzednych jest na srodku
-    lastPos.setY((event->pos().y()/w-wartoscOrtho)*-1);
-    out << lastPos.x() << " " << lastPos.y() << endl;
-
-}
-
-void MyGLWidget::mouseMoveEvent(QMouseEvent *event)
-{
-
-    //        if (event->buttons() & Qt::LeftButton)
-    //        {
-    //            float rx = event->pos().rx();
-    //            wartoscOrtho+=rx;
-    //            resizeGL(width(),height());
-
-    //        }
-    //        lastPos = event->pos();
-    //        updateGL();
-}
-
-void MyGLWidget::wheelEvent(QWheelEvent *event)
-{
-    int x = event->delta();
-    resizeGL(width(),height());
-}
-
-
-
-void MyGLWidget::animacjaPrzyblizania()
-{
-        static bool j = 1;
-        //animacja przyblizania
-        if( j && wartoscOrtho > ramkaPrzyblizania)
-        {
-            wartoscOrtho -= 10;
-
-            if( wartoscOrtho < ramkaPrzyblizania+11)
-            {
-                j = 0;
-                wartoscOrtho = ramkaPrzyblizania+2;
-            }
-            resizeGL(width(), height());
-        }
-
-}
 
 
 void MyGLWidget::przeslijFigury(QList <Figura*> &list1)

@@ -7,7 +7,7 @@ namespace Ui {
 class Dialog2;
 }
 /*!
- * \brief Okno Dialogowe, umożliwiające przejście do następnego poziomu
+ * \brief Okno Dialogowe, umożliwiające przejście do następnego poziomu.
  *
  * Wyświetlane po ukończeniu poziomu
  */

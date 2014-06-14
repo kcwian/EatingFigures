@@ -3,19 +3,28 @@
 #include <QGLWidget>
 #include "figura.h"
 
+/*!
+ * \brief Klasa służąca do rysowania koła.
+ */
 class Kolo : public Figura
 {
-    friend QDataStream & operator <<(QDataStream &stream, Kolo *kolo);
-    friend QDataStream & operator >>(QDataStream &stream, Kolo *kolo);
-    friend QDataStream & operator <<(QDataStream &stream, QList <Kolo*> &listaKol);
-    friend QDataStream & operator >>(QDataStream &stream, QList <Kolo*> &listaKol);
+
 public:
+    /*!
+     * \brief Konstruktor domyślny
+     */
     Kolo();
+    /*!
+     * \brief Konstruktor parametryczny
+     * \param x_ Współrzędna X środka.
+     * \param y_ Współrzędna Y środka.
+     * \param r_ Promień koła.
+     */
     Kolo(float x_, float y_, float r_);
     ~Kolo();
+
     virtual void rysuj();
     virtual float zwrocRozmiar();
-    virtual bool czyNalezydoFigury(float x, float y);
     virtual bool czyKolizja(Figura *druga);
     virtual void zmienRozmiar(float);
     virtual float zwrocPole();
@@ -23,10 +32,8 @@ public:
     virtual double zwrocodlegloscDoKolizji();
     virtual int zwrocTyp();
 
-
-
 protected:
-   // float r;
+
 };
 
 #endif // KOLO_H
