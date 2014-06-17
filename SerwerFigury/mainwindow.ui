@@ -69,6 +69,26 @@
          <string>Poziom 5</string>
         </property>
        </item>
+       <item>
+        <property name="text">
+         <string>Poziom 6</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Poziom 7</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Poziom 8</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Poziom 9</string>
+        </property>
+       </item>
       </widget>
      </item>
      <item>
