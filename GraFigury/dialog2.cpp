@@ -23,7 +23,6 @@ Dialog2::~Dialog2()
 void Dialog2::ustawWiadomosc(QString wiadomosc)
 {
     ui->label->setText(wiadomosc);
-
 }
 
 /*!

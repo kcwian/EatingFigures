@@ -1,4 +1,4 @@
-#include <QGLWidget>
+        #include <QGLWidget>
 #include <qmath.h>
 #include "poziomy.h"
 #include <QTextStream>
@@ -374,6 +374,33 @@ void Poziomy::inicjalizuj(int i,int &ramkaPrzyblizania,QList <Figura*> &list, QL
 
     case 9:
 
+        int d = 100/(liczbaKlientow+1);
+        for (int i = 1; i<liczbaKlientow+1; i++)
+        {
+
+            Figura *ster = new Kolo(30,-50+i*d,3.5);
+            ster->ustawPredkoscX(0);
+            ster->ustawPredkoscY(0);
+            ster->ustawOmega(0);
+            list.append(ster);
+        }
+
+        // Figury
+        for (int i=-45;i<45;i+=7)
+        {
+            list.append(new Kolo(-45,i,2));
+            list.append(new Kolo(-30,i,2));
+            list.append(new Kolo(-15,i,2));
+            list.append(new Kolo(25,i,2));
+        }
+
+        listaOdcinkow.append(new Odcinek(-50,-50,50,-50));
+        listaOdcinkow.append(new Odcinek(50,-50,50,50));
+        listaOdcinkow.append(new Odcinek(10,-10,10,-50));
+        listaOdcinkow.append(new Odcinek(0,10,50,50));
+        listaOdcinkow.append(new Odcinek(0,50,0,10));
+         listaOdcinkow.append(new Odcinek(-50,50,0,50));
+        listaOdcinkow.append(new Odcinek(-50,50,-50,-50));
 
         break;
     }

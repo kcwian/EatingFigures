@@ -158,7 +158,7 @@ void MainWindow::on_timer()
     }
 
     // zmienianie fiugry na inną
-    if(aktualnyPoziom != 10)
+    if(aktualnyPoziom != 9)
         return;
     static int cnt = 0;
     cnt++;
@@ -303,6 +303,8 @@ void MainWindow::zmienPoziom(int i)
     timer.stop();
     usunFigury();
     usunOdicnki();
+    if( i>9 )
+        i-=10;
     poziomy.inicjalizuj(i,ramkaPrzyblizania,listaFigur,listaOdcinkow,clients.size());
     aktualnyPoziom = i;
 
