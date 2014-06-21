@@ -105,7 +105,7 @@ void Figura::ustawPredkoscX(float vx)
 
 /*!
  * \brief Ustawia prędkość poruszania się figury w kierunku pionowym
- * \param vx Wartość prędkości.
+ * \param vy Wartość prędkości.
  */
 void Figura::ustawPredkoscY(float vy)
 {
@@ -249,7 +249,7 @@ QDataStream & operator <<(QDataStream &stream, QList <Figura*> &listaFigur)
     stream << rozmiarListy; // Pierwszy element to dlugosc listy
     for(int i=0; i<rozmiarListy;i++)
     {
-         stream << listaFigur.at(i)->zwrocTyp(); // Najpierw info o typie figury
+         stream << listaFigur.at(i)->zwrocTyp();
         stream << listaFigur.at(i); // Korzysta z wcześniej przeciążonego operatora dla klasy Figura
     }
     return stream;

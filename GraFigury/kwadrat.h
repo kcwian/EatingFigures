@@ -9,7 +9,7 @@ class Kwadrat : public Figura
 {
 public:
     /*!
-     * \brief Konstruktor domyślny
+     * \brief Konstruktor domyślny.
      */
     Kwadrat();
     /*!

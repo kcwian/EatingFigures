@@ -26,7 +26,7 @@ void Kolo::rysuj()
     glLoadIdentity();
     glTranslatef(x,y,0);
     glColor4fv(kolor);
-    int num_segments = r*20;                                                    // smuklosc okręgu
+    int num_segments = r*20;
     float theta = 2 * 3.1415926 / float(num_segments);
     float tangetial_factor = tan(theta);//calculate the tangential factor
     float radial_factor = cos(theta);//calculate the radial factor

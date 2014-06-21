@@ -1,4 +1,4 @@
-        #include <QGLWidget>
+#include <QGLWidget>
 #include <qmath.h>
 #include "poziomy.h"
 #include <QTextStream>
@@ -15,7 +15,7 @@ void Poziomy::inicjalizuj(int i,int &ramkaPrzyblizania,QList <Figura*> &list, QL
     case 0:
     {
 
-        ramkaPrzyblizania = 52;
+        // Dodawanie figur klientów
         int d = 90/(liczbaKlientow+1);
         for (int i = 1; i<liczbaKlientow+1; i++)
         {
@@ -27,6 +27,7 @@ void Poziomy::inicjalizuj(int i,int &ramkaPrzyblizania,QList <Figura*> &list, QL
             list.append(ster);
         }
 
+        // Dodawanie pozostałych figur
         Figura *nowa2;
         for (int j=-45; j<45; j+=20)
         {
@@ -40,7 +41,7 @@ void Poziomy::inicjalizuj(int i,int &ramkaPrzyblizania,QList <Figura*> &list, QL
 
         }
 
-        // dodawanie odcinkow
+        // Dodawanie odcinkow
         listaOdcinkow.append(new Odcinek(-50,-50,50,-50));
         listaOdcinkow.append(new Odcinek(50,-50,50,50));
         listaOdcinkow.append(new Odcinek(-50,50,50,50));
@@ -50,7 +51,7 @@ void Poziomy::inicjalizuj(int i,int &ramkaPrzyblizania,QList <Figura*> &list, QL
     }
     case 1:
     {
-        ramkaPrzyblizania = 52;
+
         int d = 90/(liczbaKlientow+1);
         for (int i = 1; i<liczbaKlientow+1; i++)
         {
@@ -67,13 +68,12 @@ void Poziomy::inicjalizuj(int i,int &ramkaPrzyblizania,QList <Figura*> &list, QL
             for (int i = -30; i<=30;i+=10)
             {
                 nowa2 = new Kwadrat(i,j,3);
-                //                nowa2->ustawPredkoscX(1);
-                //                nowa2->ustawPredkoscY(1);
                 list.append(nowa2);
             }
 
         }
 
+        // Dodawanie odcinków.
         float r = 50; // promien
         int n = 6;
         float kat = 2*3.1415/n;
@@ -133,7 +133,7 @@ void Poziomy::inicjalizuj(int i,int &ramkaPrzyblizania,QList <Figura*> &list, QL
             nowa2->ustawPredkoscX(0);
             nowa2->ustawPredkoscY(0);
             nowa2->ustawOmega(0);
-            list.append(nowa2); // pierwsza to sterowana
+            list.append(nowa2);
         }
 
         for(int i=-45; i<25; i+=10)
@@ -404,12 +404,6 @@ void Poziomy::inicjalizuj(int i,int &ramkaPrzyblizania,QList <Figura*> &list, QL
 
         break;
     }
-
-
-
-    list.at(0)->ustawPredkoscX(0); // sterowana
-    list.at(0)->ustawPredkoscY(0); //
-    list.at(0)->ustawOmega(0);     //
 
 }
 

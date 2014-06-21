@@ -28,7 +28,7 @@ public:
 
     enum {FIGURY,INFO,KONIEC,WYGRANA,PRZEGRANA,REMIS,ZMIANA}; //!< Typ wyliczeniowy, służący do identyfikacjy danych przesyłanych przez serwer.
     /*!
-     * \brief Konstruktor
+     * \brief Konstruktor domyślny.
      */
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
@@ -75,8 +75,8 @@ private:
      * \brief Gniazdo, służące do komunikacji z serwerem.
      */
     QTcpSocket *socket;
-    Dialog *dialog;
-    Dialog2 *dialog2;
+    Dialog *dialog; //!< Okno Dialogowe, służące do połączenia z serwerem.
+    Dialog2 *dialog2; //!< Okno Dialogowe, umożliwiające przejście do następnego poziomu.
     int wynik; //!< Przechowuje informację o ilości wygranych.
 
 

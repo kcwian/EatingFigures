@@ -24,7 +24,6 @@ Kwadrat::~Kwadrat()
 
 void Kwadrat::rysuj()
 {
-
     glLoadIdentity();
     glTranslatef(x,y,0);
     glRotatef(alpha,0,0,1);
@@ -35,8 +34,6 @@ void Kwadrat::rysuj()
     glVertex2f(r/2,r/2);
     glVertex2f(-r/2,r/2);
     glEnd();
-
-
 
 }
 

@@ -15,7 +15,7 @@ Odcinek::Odcinek(GLfloat Ax_, GLfloat Ay_, GLfloat Bx_, GLfloat By_)
     if(Bx-Ax != 0)
         alpha = (qAtan((By-Ay)/(Bx-Ax)));
     else
-        alpha = PI*0.5; //
+        alpha = PI*0.5; // alpha = 90
 
 }
 
@@ -61,7 +61,7 @@ void Odcinek::czyKolizja(Figura* figura)
             GLdouble a2 = -1/a;
             GLdouble b2 = figura->zwrocPolozenieY() - a2*figura->zwrocPolozenieX();
 
-            // pkt przecięcia prostych
+            // Pkt przecięcia prostych
 
             xPkt = (b-b2)/(a2-a);
             yPkt = a2*xPkt + b2;
@@ -77,7 +77,6 @@ void Odcinek::czyKolizja(Figura* figura)
     {
         xPkt = Bx;
         yPkt = yF;
-
     }
 
 
@@ -86,14 +85,12 @@ void Odcinek::czyKolizja(Figura* figura)
         kolizja = 1;
     }
 
-
-
-
-            if(kolizja == 1)
+    // Obsługa kolizji
+    if(kolizja == 1)
     {
 
 
-        // obliczenie kata figury - beta;
+
         GLfloat Vx = figura->zwrocPredkoscX();
         GLfloat Vy = figura->zwrocPredkoscY();
 
@@ -103,17 +100,18 @@ void Odcinek::czyKolizja(Figura* figura)
         GLfloat sinV = Vy/modol;
         GLfloat beta;
 
+        // Obliczenie kąta obrotu figury - beta;
         if (qAbs(Vx) == 0)
         {
 
-            if(Vy > 0) // w gore
+            if(Vy > 0) // Ruch w górę
                 beta = PI*0.5;
-            else       // w dol
+            else       // Ruch w dół
                 beta = 1.5*PI;
         }
         else if(Vy == 0 )
         {
-            if(Vx > 0) // w prawou
+            if(Vx > 0) // w prawo
                 beta = 0;
             else
                 beta = -PI; // w lewo
@@ -174,9 +172,9 @@ QDataStream & operator >>(QDataStream &stream, QList <Odcinek*> &listaOdcinkow)
 
     for(int i=0; i<rozmiarListy;i++)
     {
-       Odcinek *odcinek = new Odcinek(1,2,3,4);
-       stream >> odcinek;
-       listaOdcinkow.append(odcinek);
+        Odcinek *odcinek = new Odcinek(1,2,3,4);
+        stream >> odcinek;
+        listaOdcinkow.append(odcinek);
     }
     return stream;
 }

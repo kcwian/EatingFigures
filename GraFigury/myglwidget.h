@@ -11,6 +11,11 @@
 #include <poziomy.h>
 #include <odcinek.h>
 
+/*!
+ * \brief Klasa służąca do rysowania w OpenGL.
+ *
+ * Dziedziczy z klasy QGLWidget
+ */
 class MyGLWidget : public QGLWidget
 {
     Q_OBJECT

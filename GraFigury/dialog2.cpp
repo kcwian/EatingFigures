@@ -15,10 +15,10 @@ Dialog2::~Dialog2()
 }
 
 /*!
- * \brief Dialog2::ustawWiadomosc
- * \param wiadomosc
+ * \brief
+ * \param wiadomosc Treść wiadomości
  *
- * Ustawia wiadomość w oknie dialogowym
+ * Ustawia wiadomość w oknie dialogowym.
  */
 void Dialog2::ustawWiadomosc(QString wiadomosc)
 {
@@ -26,12 +26,11 @@ void Dialog2::ustawWiadomosc(QString wiadomosc)
 }
 
 /*!
- * Po wciśnięciu przycisku zostanie przesłana informacja
- * o zmianie poziomu
+ * Po wciśnięciu przycisku zostanie przesłana do serwera informacja
+ * o zmianie poziomu.
  */
 void Dialog2::on_pushButton_2_clicked()
 {
     this->hide();
     emit zmienPoziom();
-
 }

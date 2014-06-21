@@ -28,7 +28,7 @@ MyGLWidget::~MyGLWidget()
 
 void MyGLWidget::initializeGL()
 {
-    glEnable(GL_DEPTH_TEST);     //!< Ustawia glębię.
+    glEnable(GL_DEPTH_TEST);
 
 }
 
@@ -46,7 +46,6 @@ void MyGLWidget::resizeGL(int w, int h)
     else
     {
         glOrtho(-wartoscOrtho, wartoscOrtho, -wartoscOrtho, wartoscOrtho, -1 ,1 );
-
     }
     glMatrixMode(GL_MODELVIEW);
 
@@ -64,17 +63,13 @@ void MyGLWidget::paintGL()
         for (int i=0; i<listaFigur.size(); i++)
         {
             listaFigur.at(i)->rysuj();
-
         }
 
         for (int i=0; i<listaOdcinkow.size();i++)
         {
             listaOdcinkow.at(i)->rysuj();
         }
-
-
     }
-
     else
     {
         glLoadIdentity();
@@ -82,10 +77,7 @@ void MyGLWidget::paintGL()
         glVertex2d(0,0);
 
         glEnd();
-
     }
-
-
 }
 
 

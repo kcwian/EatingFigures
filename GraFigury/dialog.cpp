@@ -14,7 +14,7 @@ Dialog::~Dialog()
 }
 
 /*!
- * Służy do połączenia klienta z serwerem
+ * Służy do połączenia klienta z serwerem.
  */
 
 void Dialog::on_pushButtonPolacz_clicked()
@@ -23,9 +23,9 @@ void Dialog::on_pushButtonPolacz_clicked()
 }
 
 /*!
- * \brief ustawWiadomosc
+ * \brief
  *
- * Ustawia wiadomość w oknie dialogowym
+ * Ustawia wiadomość w oknie dialogowym.
  */
 void Dialog::ustawWiadomosc(QString wiadomosc)
 {

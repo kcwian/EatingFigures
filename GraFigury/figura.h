@@ -27,10 +27,10 @@ public:
     float zwrocPredkoscX();
     float zwrocPredkoscY();
     void ustawPredkoscX(float vx);
-    void ustawPredkoscY(float vy); 
+    void ustawPredkoscY(float vy);
     void zmienPolozenie(float dx, float dy);
     float zwrocPolozenieX();
-    float zwrocPolozenieY();   
+    float zwrocPolozenieY();
     void ustawOmega(float v);
      float zwrocOmega();
     void zmienAlpha(float da);
@@ -53,7 +53,7 @@ public:
     /*!
      * \brief Sprawdza czy nastąpiła kolizja dwóch figur.
      * \param druga Figura, z którą sprawdzana jest kolizja.
-     * \return prawdę, gdy wystąpiła kolizja
+     * \return prawdę, gdy wystąpiła kolizja.
      */
     virtual bool czyKolizja(Figura * druga) = 0;
 
@@ -63,7 +63,7 @@ public:
      *
      * Promień kolizji:
      * Koło - promień.
-     * Kwadrat - średnia z długości połowy przekątnej oraz połowy boku.
+     * Kwadrat - średnia arytmetyczna z długości połowy przekątnej oraz połowy boku.
      * Trojkat - połowa wysokości.
      */
     virtual double zwrocodlegloscDoKolizji() = 0;

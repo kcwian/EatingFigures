@@ -18,7 +18,7 @@ public:
      * \param y_ Współrzędna Y środka.
      * \param a_ Długość boku.
      */
-    Kwadrat(float x_, float y_, float a_); // srodek i dlugość boku
+    Kwadrat(float x_, float y_, float a_);
     ~Kwadrat();
     virtual void rysuj();
     virtual float zwrocRozmiar();

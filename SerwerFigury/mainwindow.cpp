@@ -13,12 +13,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     QNetworkConfigurationManager manager;
     aktualnyPoziom = 0;
-    if(manager.capabilities()&QNetworkConfigurationManager::NetworkSessionRequired) // zalezne od systemu
+    if(manager.capabilities()&QNetworkConfigurationManager::NetworkSessionRequired)
     {
         QNetworkConfiguration configuration = manager.defaultConfiguration();
         networkSession = new QNetworkSession(configuration,this);
         connect(networkSession, SIGNAL(opened()),this, SLOT(openSession()));
-        networkSession->open(); // w sygnale po otwarciu sesji, obslugujemy
+        networkSession->open();
     }
     else
     {
@@ -53,7 +53,7 @@ void MainWindow::openSession()
     for (int i = 0; i< ipAddressesList.size(); ++i)
     {
 
-        if(ipAddressesList.at(i)!= QHostAddress::LocalHost // szuka adresu zewnÄ™trznego
+        if(ipAddressesList.at(i)!= QHostAddress::LocalHost // szuka adresu zewnnętrznego
                 && ipAddressesList.at(i).toIPv4Address())
         {
             ipAddress = ipAddressesList.at(i).toString();
@@ -121,7 +121,7 @@ void MainWindow::newMessage()
                 ruchOdrzutowy(key,i);
 
         }
-       // clients.at(i)->readAll();
+
 
     }
 }
@@ -130,7 +130,6 @@ void MainWindow::newMessage()
 void MainWindow::on_timer()
 {
 
-    // animacjaPrzyblizania();
     for (int i = 0; i<listaFigur.size(); i++)
     {
         for(int j=0; j<listaOdcinkow.size();j++)
@@ -165,7 +164,7 @@ void MainWindow::on_timer()
     if(cnt == 10)
     {
         cnt = 0;
-        int i = qrand()%(listaFigur.size()); // klientow nie zmienia
+        int i = qrand()%(listaFigur.size()); // Klientow nie zmienia
         zmienFigure(listaFigur.at(i));
     }
 
@@ -203,7 +202,7 @@ void MainWindow::ruchFigur()
 
 void MainWindow::zjadanieMniejszych()
 {
-    // zjadanie mniejszych
+
     int k=1;
     if(listaFigur.length()>1)
     {
@@ -217,14 +216,13 @@ void MainWindow::zjadanieMniejszych()
                 {
                     if(tmp1->zwrocPole() >= tmp2->zwrocPole())
                     {
-                        // if(tmp1->zwrocRozmiar() < 30) // maksymalny rozmiar
-                        tmp1->zmienPole(+tmp2->zwrocPole()/4); // szybkosc zjadania
+
+                        tmp1->zmienPole(+tmp2->zwrocPole()/4); // szybkosc Zjadania
                         tmp2->zmienPole(-tmp2->zwrocPole()/4);
                     }
                     else
                     {
                         tmp1->zmienPole(-tmp1->zwrocPole()/4);
-                        //if(tmp2->zwrocRozmiar() < 30)
                         tmp2->zmienPole(+tmp1->zwrocPole()/4);
 
                     }
@@ -241,7 +239,7 @@ void MainWindow::zjadanieMniejszych()
 
             Figura *tmp = listaFigur.at(i);
             sumaPol += tmp->zwrocPole();
-            if (tmp->zwrocPole() <= 0.5) // rozmiar, czy pole?
+            if (tmp->zwrocPole() <= 0.5)
             {
 
                 if(i<clients.size())
@@ -258,7 +256,7 @@ void MainWindow::zjadanieMniejszych()
             }
         }
 
-        // Sprawdzanie czy koniec poziomu - musi być jeden aktywny gracz i miec pole większe niż suma pól pozostałych figur
+        // Sprawdzanie czy koniec poziomu - musi zostać jeden aktywny gracz oraz mieć pole większe niż suma pól pozostałych figur
         int jedynyAktywny = -1;
         int liczbaAktywnychGraczy = zwrocLiczbeAktywnychGraczy(jedynyAktywny);
 
@@ -272,8 +270,6 @@ void MainWindow::zjadanieMniejszych()
         {
             koniecPoziomu(-1);
         }
-
-        // zrobić warunek konca poziomu - zjeść przeciwnika, czy wszystkich ?
 
     }
 }
@@ -352,7 +348,7 @@ void MainWindow::ruchOdrzutowy(int key, int i)
     float sVx = sterowana->zwrocPredkoscX();
     float sVy = sterowana->zwrocPredkoscY();
     Figura *nowa = 0;
-    float dN = sterowana->zwrocodlegloscDoKolizji() + 1; // w tej odleglosc pojawi się nowa ,+1 -
+    float dN = sterowana->zwrocodlegloscDoKolizji() + 1;
 
     switch(sterowana->zwrocTyp())
     {
@@ -377,17 +373,17 @@ void MainWindow::ruchOdrzutowy(int key, int i)
     listaFigur.append(nowa);
     float dPole = sterowana->zwrocPole()*0.05; // 5% figury
     sterowana->zmienPole(-dPole);
-    nowa->zmienPole(-(nowa->zwrocPole() - dPole)); // domyślnie nowa ma rozmiar 1, a chce żeby miała pole dPole // można dopisać funkcje ustawPole
+    nowa->zmienPole(-(nowa->zwrocPole() - dPole));
 
 
     switch(key)
     {
     case Qt::Key_Up:
 
-        sterowana->ustawPredkoscY(sVy-3); // kolejnosc
+        sterowana->ustawPredkoscY(sVy-3);
         nowa->zmienPolozenie(0,dN);
         nowa->ustawPredkoscX(sVx);
-        nowa->ustawPredkoscY(sVy + 10); //sc kolejno // stala prędkość wzgl sterowanej
+        nowa->ustawPredkoscY(sVy + 10);
         break;
 
     case Qt::Key_Down:
@@ -432,7 +428,7 @@ void MainWindow::on_pushButtonStop_clicked()
 void MainWindow::koniecPoziomu(int jedynyAktywny)
 {
 
-    if(wyslanoKoniecPoziomu != 1) // w wiadomosci zwrotnej ustawić na 0
+    if(wyslanoKoniecPoziomu != 1)
     {
         wyslanoKoniecPoziomu = 1;
         timer.stop();
@@ -446,11 +442,11 @@ void MainWindow::koniecPoziomu(int jedynyAktywny)
                 if(clients.size() == 1 && jedynyAktywny == -1)
                     data << PRZEGRANA;
                 else if(clients.size() > 1 && (jedynyAktywny == -1))
-                    data << REMIS; // remis;
+                    data << REMIS;
                 else if (i != jedynyAktywny)
-                    data << PRZEGRANA; // Przegrana
+                    data << PRZEGRANA;
                 else
-                    data << WYGRANA; // Wygrana
+                    data << WYGRANA;
             }
         }
         timer.start(Ts);
@@ -508,7 +504,6 @@ void MainWindow::zmienFigure(Figura* figura) // Kolo->Kwadrat->Trojkat
     nowa->ustawPredkoscX(figura->zwrocPredkoscX());
     nowa->ustawPredkoscY(figura->zwrocPredkoscY());
     nowa->ustawOmega(figura->zwrocOmega());
-    //        nowa->ustawKolor(figura->zwr);
     delete listaFigur.at(i);
     listaFigur.replace(i,nowa);
 

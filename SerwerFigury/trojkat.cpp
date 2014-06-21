@@ -20,8 +20,8 @@ Trojkat::~Trojkat()
 void Trojkat::rysuj()
 {
     glLoadIdentity();
-    glTranslatef(x,y,0); // ma znaczenie
-    glRotatef(alpha,0,0,1); // kolejnosc
+    glTranslatef(x,y,0);
+    glRotatef(alpha,0,0,1);
     glColor4fv(kolor);
     glBegin(GL_POLYGON);
     glVertex2f(-r/2,-r*1.73/6);
@@ -39,7 +39,7 @@ bool Trojkat::czyKolizja(Figura *druga)
 {
     if(druga->zwrocTyp() == TROJKAT)
     {
-        return (odleglosc(druga) < (zwrocodlegloscDoKolizji() + druga->zwrocodlegloscDoKolizji()));  //0.5 wysokosci (srednia między 2/3 i 1/3) // 0.9- korekta
+        return (odleglosc(druga) < (zwrocodlegloscDoKolizji() + druga->zwrocodlegloscDoKolizji()));  //0.5 wysokosci
     }
     return false;
 }

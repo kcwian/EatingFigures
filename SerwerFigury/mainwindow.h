@@ -120,17 +120,17 @@ private:
 
 
     Ui::MainWindow *ui;
-    QTcpServer *server; //!< Pole, służące do obsługi serwera.
-    QNetworkSession * networkSession;
+    QTcpServer *server; //!< Pole służące do obsługi serwera.
+    QNetworkSession * networkSession; //!<
     QList <QTcpSocket*> clients; //!< Lista klientów połączonych z serwerem.
     int ramkaPrzyblizania; //!< Określa zakres pola, na którym toczy się gra.
     QList <Figura*> listaFigur; //!< Lista wkaźników klasy Figura. Zawiera wszystkie rysowane figury.
-    QList <Odcinek*> listaOdcinkow; //! Zawiera wszystkie odcinki, od których odbijają się figury.
+    QList <Odcinek*> listaOdcinkow; //!< Zawiera wszystkie odcinki, od których odbijają się figury.
     Poziomy poziomy; //!< Zawiera wszystkie poziomy.
-    QTimer timer; //!< Służy do odmierzania czasu, po którym aktualizowana jest gra.
+    QTimer timer; //!< Służy do odmierzania czasu po którym aktualizowana jest gra.
     int Ts; //!< Czas odmierzany przez timer.
     int aktualnyPoziom; //!< Informacja o numerze aktualnego poziomu.
-    bool wyslanoKoniecPoziomu; //! Służy do określenia, czy do klientów została wysłana informacja o ukończeniu poziomu.
+    bool wyslanoKoniecPoziomu; //!< Służy do określenia, czy do klientów została wysłana informacja o ukończeniu poziomu.
 
 
 };

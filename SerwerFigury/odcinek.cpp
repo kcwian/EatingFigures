@@ -35,7 +35,7 @@ void Odcinek::czyKolizja(Figura* figura)
     QTextStream out2(stdout);
     GLdouble xF = figura->zwrocPolozenieX();
     GLdouble yF = figura->zwrocPolozenieY();
-    GLdouble rF = figura->zwrocodlegloscDoKolizji(); // zmienione z  zwrocRozmiar->*0.5
+    GLdouble rF = figura->zwrocodlegloscDoKolizji();
     GLdouble xPkt;
     GLdouble yPkt;
 
@@ -89,7 +89,7 @@ void Odcinek::czyKolizja(Figura* figura)
 
 
 
-            if(kolizja == 1)
+    if(kolizja == 1)
     {
 
 
@@ -174,9 +174,9 @@ QDataStream & operator >>(QDataStream &stream, QList <Odcinek*> &listaOdcinkow)
 
     for(int i=0; i<rozmiarListy;i++)
     {
-       Odcinek *odcinek = new Odcinek(1,2,3,4);
-       stream >> odcinek;
-       listaOdcinkow.append(odcinek);
+        Odcinek *odcinek = new Odcinek(1,2,3,4);
+        stream >> odcinek;
+        listaOdcinkow.append(odcinek);
     }
     return stream;
 }

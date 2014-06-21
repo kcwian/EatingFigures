@@ -3,9 +3,9 @@ INPUT(
 ./debug\mainwindow.o
 ./debug\myglwidget.o
 ./debug\figura.o
+./debug\trojkat.o
 ./debug\kolo.o
 ./debug\kwadrat.o
-./debug\trojkat.o
 ./debug\odcinek.o
 ./debug\dialog.o
 ./debug\dialog2.o

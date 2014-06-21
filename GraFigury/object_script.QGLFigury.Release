@@ -3,9 +3,9 @@ INPUT(
 ./release\mainwindow.o
 ./release\myglwidget.o
 ./release\figura.o
+./release\trojkat.o
 ./release\kolo.o
 ./release\kwadrat.o
-./release\trojkat.o
 ./release\odcinek.o
 ./release\dialog.o
 ./release\dialog2.o

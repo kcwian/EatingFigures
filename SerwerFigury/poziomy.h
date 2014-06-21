@@ -7,6 +7,9 @@
 #include <QList>
 #include "odcinek.h"
 
+/*!
+ * \brief Klasa, służąca do tworzenia poziomów.
+ */
 class Poziomy
 {
 public:

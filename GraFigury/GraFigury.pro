@@ -17,9 +17,9 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     myglwidget.cpp\
 figura.cpp\
+trojkat.cpp \
 kolo.cpp\
 kwadrat.cpp\
-trojkat.cpp \
     odcinek.cpp \
     dialog.cpp \
     dialog2.cpp

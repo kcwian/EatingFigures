@@ -47,9 +47,9 @@ SOURCES       = main.cpp \
 		mainwindow.cpp \
 		myglwidget.cpp \
 		figura.cpp \
+		trojkat.cpp \
 		kolo.cpp \
 		kwadrat.cpp \
-		trojkat.cpp \
 		odcinek.cpp \
 		dialog.cpp \
 		dialog2.cpp release\moc_mainwindow.cpp \
@@ -60,9 +60,9 @@ OBJECTS       = release/main.o \
 		release/mainwindow.o \
 		release/myglwidget.o \
 		release/figura.o \
+		release/trojkat.o \
 		release/kolo.o \
 		release/kwadrat.o \
-		release/trojkat.o \
 		release/odcinek.o \
 		release/dialog.o \
 		release/dialog2.o \
@@ -110,7 +110,7 @@ dist:
 	$(ZIP) QGLFigury.zip $(SOURCES) $(DIST) GraFigury.pro E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\spec_pre.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\qdevice.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\device_config.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\common\shell-win32.conf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\qconfig.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_axbase.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_axbase_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_axcontainer.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_axcontainer_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_axserver.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_axserver_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_bluetooth.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_bluetooth_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_bootstrap_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_clucene_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_concurrent.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_concurrent_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_core.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_core_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_declarative.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_declarative_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_designer.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_designer_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_designercomponents_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_gui.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_gui_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_help.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_help_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_multimedia.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_multimedia_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_multimediawidgets.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_multimediawidgets_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_network.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_network_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_nfc.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_nfc_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_opengl.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_opengl_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_openglextensions.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_openglextensions_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_platformsupport_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_positioning.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_positioning_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_printsupport.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_printsupport_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_qml.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_qml_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_qmldevtools_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_qmltest.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_qmltest_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_quick.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_quick_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_quickparticles_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_script.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_script_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_scripttools.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_scripttools_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_sensors.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_sensors_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_serialport.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_serialport_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_sql.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_sql_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_svg.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_svg_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_testlib.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_testlib_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_uitools.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_uitools_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_webkit.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_webkit_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_webkitwidgets.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_webkitwidgets_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_widgets.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_widgets_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_winextras.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_winextras_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_xml.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_xml_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_xmlpatterns.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\modules\qt_lib_xmlpatterns_private.pri E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\qt_functions.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\qt_config.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\win32-g++\qmake.conf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\spec_post.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\exclusive_builds.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\default_pre.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\win32\default_pre.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\resolve_config.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\exclusive_builds_post.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\default_post.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\build_pass.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\qml_debug.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\declarative_debug.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\win32\rtti.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\warn_on.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\qt.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\resources.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\moc.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\win32\opengl.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\uic.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\win32\windows.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\testcase_targets.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\exceptions.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\yacc.prf E:\Programy\QtCreator\5.2.1\mingw48_32\mkspecs\features\lex.prf GraFigury.pro E:/Programy/QtCreator/5.2.1/mingw48_32/lib/Qt5OpenGL.prl E:/Programy/QtCreator/5.2.1/mingw48_32/lib/Qt5Widgets.prl E:/Programy/QtCreator/5.2.1/mingw48_32/lib/Qt5Network.prl E:/Programy/QtCreator/5.2.1/mingw48_32/lib/Qt5Gui.prl E:/Programy/QtCreator/5.2.1/mingw48_32/lib/Qt5Core.prl  RESOURCES HEADERS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\main.o release\mainwindow.o release\myglwidget.o release\figura.o release\kolo.o release\kwadrat.o release\trojkat.o release\odcinek.o release\dialog.o release\dialog2.o release\moc_mainwindow.o release\moc_myglwidget.o release\moc_dialog.o release\moc_dialog2.o
+	-$(DEL_FILE) release\main.o release\mainwindow.o release\myglwidget.o release\figura.o release\trojkat.o release\kolo.o release\kwadrat.o release\odcinek.o release\dialog.o release\dialog2.o release\moc_mainwindow.o release\moc_myglwidget.o release\moc_dialog.o release\moc_dialog2.o
 
 distclean: clean
 	-$(DEL_FILE) $(DESTDIR_TARGET)
@@ -1837,6 +1837,132 @@ release/figura.o: figura.cpp figura.h \
 		trojkat.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\figura.o figura.cpp
 
+release/trojkat.o: trojkat.cpp trojkat.h \
+		figura.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/QDataStream \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qdatastream.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qscopedpointer.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qglobal.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qconfig.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qfeatures.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qsystemdetection.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qprocessordetection.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qcompilerdetection.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qglobalstatic.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qbasicatomic.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_bootstrap.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qgenericatomic.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_msvc.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_integrity.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qoldbasicatomic.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_vxworks.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_power.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_alpha.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_armv7.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_armv6.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_armv5.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_bfin.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_ia64.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_mips.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_s390.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_sh4a.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_sparc.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_x86.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_cxx11.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_gcc.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_unix.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qmutex.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qlogging.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qflags.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qtypeinfo.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qtypetraits.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qsysinfo.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qiodevice.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qobject.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qobjectdefs.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qnamespace.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qobjectdefs_impl.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qstring.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qchar.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qbytearray.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qrefcount.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qarraydata.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qstringbuilder.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qlist.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qalgorithms.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qiterator.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qcoreevent.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qmetatype.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qvarlengtharray.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qcontainerfwd.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qisenum.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qobject_impl.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qpair.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtOpenGL/QGLWidget \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtOpenGL/qgl.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qopengl.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qt_windows.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qopengles2ext.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qopenglext.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtWidgets/qwidget.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qwindowdefs.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qwindowdefs_win.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qmargins.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qrect.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qsize.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qpoint.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qpaintdevice.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qpalette.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qcolor.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qrgb.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qstringlist.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qregexp.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qstringmatcher.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qbrush.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qvector.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qmatrix.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qpolygon.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qregion.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qline.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qtransform.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qpainterpath.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qimage.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qpixmap.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qsharedpointer.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qshareddata.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qsharedpointer_impl.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qhash.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qfont.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qfontmetrics.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qfontinfo.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtWidgets/qsizepolicy.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qcursor.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qkeysequence.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qevent.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qvariant.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qmap.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qdebug.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qtextstream.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qlocale.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qset.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qcontiguouscache.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qurl.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qurlquery.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qfile.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qfiledevice.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qvector2d.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qtouchdevice.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qpaintengine.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qpainter.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qtextoption.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qpen.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtOpenGL/qglcolormap.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtOpenGL/qtopenglglobal.h \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/QSurfaceFormat \
+		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qsurfaceformat.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\trojkat.o trojkat.cpp
+
 release/kolo.o: kolo.cpp kolo.h \
 		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtOpenGL/QGLWidget \
 		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtOpenGL/qgl.h \
@@ -2089,132 +2215,6 @@ release/kwadrat.o: kwadrat.cpp E:/Programy/QtCreator/5.2.1/mingw48_32/include/Qt
 		figura.h \
 		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/QDataStream
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\kwadrat.o kwadrat.cpp
-
-release/trojkat.o: trojkat.cpp trojkat.h \
-		figura.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/QDataStream \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qdatastream.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qscopedpointer.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qglobal.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qconfig.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qfeatures.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qsystemdetection.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qprocessordetection.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qcompilerdetection.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qglobalstatic.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qbasicatomic.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_bootstrap.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qgenericatomic.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_msvc.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_integrity.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qoldbasicatomic.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_vxworks.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_power.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_alpha.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_armv7.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_armv6.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_armv5.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_bfin.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_ia64.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_mips.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_s390.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_sh4a.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_sparc.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_x86.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_cxx11.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_gcc.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qatomic_unix.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qmutex.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qlogging.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qflags.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qtypeinfo.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qtypetraits.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qsysinfo.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qiodevice.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qobject.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qobjectdefs.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qnamespace.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qobjectdefs_impl.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qstring.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qchar.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qbytearray.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qrefcount.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qarraydata.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qstringbuilder.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qlist.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qalgorithms.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qiterator.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qcoreevent.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qmetatype.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qvarlengtharray.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qcontainerfwd.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qisenum.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qobject_impl.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qpair.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtOpenGL/QGLWidget \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtOpenGL/qgl.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qopengl.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qt_windows.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qopengles2ext.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qopenglext.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtWidgets/qwidget.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qwindowdefs.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qwindowdefs_win.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qmargins.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qrect.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qsize.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qpoint.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qpaintdevice.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qpalette.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qcolor.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qrgb.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qstringlist.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qregexp.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qstringmatcher.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qbrush.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qvector.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qmatrix.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qpolygon.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qregion.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qline.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qtransform.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qpainterpath.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qimage.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qpixmap.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qsharedpointer.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qshareddata.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qsharedpointer_impl.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qhash.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qfont.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qfontmetrics.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qfontinfo.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtWidgets/qsizepolicy.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qcursor.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qkeysequence.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qevent.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qvariant.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qmap.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qdebug.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qtextstream.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qlocale.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qset.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qcontiguouscache.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qurl.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qurlquery.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qfile.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtCore/qfiledevice.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qvector2d.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qtouchdevice.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qpaintengine.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qpainter.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qtextoption.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qpen.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtOpenGL/qglcolormap.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtOpenGL/qtopenglglobal.h \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/QSurfaceFormat \
-		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtGui/qsurfaceformat.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\trojkat.o trojkat.cpp
 
 release/odcinek.o: odcinek.cpp odcinek.h \
 		E:/Programy/QtCreator/5.2.1/mingw48_32/include/QtOpenGL/QGLWidget \

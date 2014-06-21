@@ -54,6 +54,7 @@ void MainWindow::newMessage()
         {
         case FIGURY:
         {
+            // Zwolnienie pamięci
             for (int i=0; i<listaFigur.size();i++)
             {
                 delete listaFigur.at(i);
@@ -61,13 +62,15 @@ void MainWindow::newMessage()
             listaFigur.clear();
 
 
-            data >> listaFigur; // ma przydzieloną dynamicznie pamięć, którą trzeba zwolnić
+            data >> listaFigur;
             ui->widget->przeslijFigury(listaFigur);
             break;
         }
         case INFO:
         {
             dialog2->hide();
+
+            // Zwolnienie pamięci
             for (int i=0; i<listaOdcinkow.size();i++)
             {
                 delete listaOdcinkow.at(i);
@@ -76,7 +79,7 @@ void MainWindow::newMessage()
 
 
             int ramkaPrzyblizania, nrKlienta;
-            data >> listaOdcinkow; // ma przydzieloną dynamicznie pamięć, którą trzeba zwolnić
+            data >> listaOdcinkow;
             data >> ramkaPrzyblizania;
             data >> nrKlienta;
             ui->widget->przeslijInfo(listaOdcinkow,ramkaPrzyblizania,nrKlienta);
@@ -104,7 +107,6 @@ void MainWindow::newMessage()
 
         }
 
-         // socket->readAll(); // WAŻNEEEE: dzięki temu nie opoźnia się gra  ?????
         }
     }
 
@@ -153,5 +155,4 @@ void MainWindow::zmienPoziomMessage()
     QDataStream data(socket);
         data << ZMIANA;
     }
-
 }

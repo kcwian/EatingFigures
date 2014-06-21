@@ -11,7 +11,7 @@ class Kolo : public Figura
 
 public:
     /*!
-     * \brief Konstruktor domyślny
+     * \brief Konstruktor domyślny.
      */
     Kolo();
     /*!

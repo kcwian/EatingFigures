@@ -50,7 +50,7 @@ public:
     void retranslateUi(QDialog *Dialog2)
     {
         Dialog2->setWindowTitle(QApplication::translate("Dialog2", "Dialog", 0));
-        label->setText(QApplication::translate("Dialog2", "Wygra\305\202e\305\233", 0));
+        label->setText(QString());
         pushButton_2->setText(QApplication::translate("Dialog2", "OK", 0));
     } // retranslateUi
 
