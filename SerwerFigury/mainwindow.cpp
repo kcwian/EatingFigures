@@ -76,6 +76,7 @@ void  MainWindow::newConnection()
     QTcpSocket * newSocket = server ->nextPendingConnection();
     if(newSocket)
     {
+        newSocket->setSocketOption(QAbstractSocket::LowDelayOption, 1);
         clients.append(newSocket);
         connect(newSocket,SIGNAL(readyRead()),this,SLOT(newMessage()));
         connect(newSocket,SIGNAL(disconnected()),this,SLOT(clientDisconnected()));
@@ -144,7 +145,6 @@ void MainWindow::on_timer()
     for (int i=0; i< clients.size(); i++)
     {
         QTcpSocket *tmp = clients.at(i);
-
         if(tmp->isWritable())
         {
 
@@ -263,7 +263,7 @@ void MainWindow::zjadanieMniejszych()
         if(jedynyAktywny !=-1)
         {
             float poleAktywnego = listaFigur.at(jedynyAktywny)->zwrocPole();
-            if(poleAktywnego > sumaPol - poleAktywnego)
+            if((poleAktywnego > sumaPol - poleAktywnego) && listaFigur.size() <= 3)
                 koniecPoziomu(jedynyAktywny);
         }
         else if(liczbaAktywnychGraczy == 0)
